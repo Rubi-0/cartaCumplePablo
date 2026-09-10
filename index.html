@@ -10,14 +10,75 @@
 
     <title>Birthday Game</title>
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+        rel="stylesheet"
+    >
+
     <link rel="stylesheet" href="css/style.css">
     <script src="js/script.js" defer></script>
 </head>
 
 <body>
     <main class="game">
-        <h1>SAVE FILE FOUND</h1>
-        <p>Proyecto conectado correctamente.</p>
+        <section
+            class="screen screen--active"
+            id="save-screen"
+            aria-labelledby="save-title"
+        >
+            <div class="night-sky" aria-hidden="true">
+                <span class="star star--1"></span>
+                <span class="star star--2"></span>
+                <span class="star star--3"></span>
+                <span class="star star--4"></span>
+                <span class="star star--5"></span>
+                <span class="star star--6"></span>
+
+                <div class="moon"></div>
+                <div class="mountain mountain--back"></div>
+                <div class="mountain mountain--front"></div>
+            </div>
+
+            <article class="save-panel">
+                <p class="save-slot">SLOT 01 // DATA DETECTED</p>
+
+                <h1 id="save-title">
+                    SAVE FILE<br>
+                    FOUND
+                </h1>
+
+                <div class="pixel-divider"></div>
+
+                <dl class="player-data">
+                    <div class="data-row">
+                        <dt>PLAYER</dt>
+                        <dd>PABLO</dd>
+                    </div>
+
+                    <div class="data-row">
+                        <dt>LEVEL</dt>
+                        <dd>21</dd>
+                    </div>
+
+                    <div class="data-row">
+                        <dt>STATUS</dt>
+                        <dd class="status">COMPLETED</dd>
+                    </div>
+                </dl>
+
+                <button id="continue-button" type="button">
+                    <span aria-hidden="true">▶</span>
+                    CONTINUE
+                </button>
+
+                <p class="screen-hint">
+                    PRESS TO LOAD PLAYER DATA
+                </p>
+            </article>
+        </section>
     </main>
 </body>
 </html>
