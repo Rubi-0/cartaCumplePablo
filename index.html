@@ -26,17 +26,20 @@
     <main class="game">
         <!-- Pantalla 1: cargando partida -->
         <section
-        class="screen screen--loading"
-        id="loading-screen"
-        aria-labelledby="loading-title"
+            class="screen screen--loading"
+            id="loading-screen"
+            aria-labelledby="loading-title"
         >
-            <div class="night-sky" aria-hidden="true"></div>
+            <div
+                class="night-sky night-sky--loading"
+                aria-hidden="true"
+            ></div>
 
             <div class="loading-interface">
                 <img
                     class="loading-character"
-                     src="assets/images/characters/pablo-side.png"
-                     alt="Pablo observando el horizonte"
+                    src="assets/images/characters/pablo-side.png"
+                    alt="Pablo observando el horizonte"
                 >
 
                 <div class="loading-panel">
@@ -76,9 +79,9 @@
             aria-labelledby="save-title"
             hidden
         >
-            <div 
-             class="night-sky night-sky--save"
-             aria-hidden="true"
+            <div
+                class="night-sky night-sky--save"
+                aria-hidden="true"
             ></div>
 
             <div class="save-interface">
@@ -114,9 +117,78 @@
                     </div>
                 </article>
 
-                <button id="continue-button" type="button">
+                <button
+                    class="game-button"
+                    id="continue-button"
+                    type="button"
+                >
                     <span aria-hidden="true">▶</span>
                     CONTINUAR
+                </button>
+            </div>
+        </section>
+
+        <!-- Pantalla 3: nivel completado -->
+        <section
+            class="screen screen--victory"
+            id="victory-screen"
+            aria-labelledby="victory-title"
+            hidden
+        >
+            <div
+                class="night-sky night-sky--victory"
+                aria-hidden="true"
+            ></div>
+
+            <div class="victory-interface">
+                <article class="victory-panel">
+                    <p class="victory-kicker">
+                        AVENTURA FINALIZADA
+                    </p>
+
+                    <h1 id="victory-title">
+                        <span>NIVEL 21</span>
+                        <strong>¡COMPLETADO!</strong>
+                    </h1>
+
+                    <p class="victory-message">
+                        PABLO HA SUPERADO EL NIVEL
+                    </p>
+                </article>
+
+                <span
+                    class="victory-spark victory-spark--1"
+                    aria-hidden="true"
+                ></span>
+
+                <span
+                    class="victory-spark victory-spark--2"
+                    aria-hidden="true"
+                ></span>
+
+                <span
+                    class="victory-spark victory-spark--3"
+                    aria-hidden="true"
+                ></span>
+
+                <span
+                    class="victory-spark victory-spark--4"
+                    aria-hidden="true"
+                ></span>
+
+                <img
+                    class="victory-character"
+                    src="assets/images/characters/pablo-victory.png"
+                    alt="Pablo celebrando que completó el nivel 21"
+                >
+
+                <button
+                    class="game-button"
+                    id="results-button"
+                    type="button"
+                >
+                    <span aria-hidden="true">▶</span>
+                    VER RESULTADOS
                 </button>
             </div>
         </section>

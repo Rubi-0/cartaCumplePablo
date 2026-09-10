@@ -59,6 +59,12 @@ button {
         url("../assets/images/backgrounds/monterrey-night.png");
 }
 
+.night-sky--victory {
+    background-image:
+        url("../assets/images/backgrounds/monterrey-night.png");
+
+    background-position: center bottom;
+}
 
 .save-interface {
     position: relative;
@@ -154,7 +160,7 @@ h1 {
     color: var(--success);
 }
 
-#continue-button {
+.game-button {
     display: block;
     width: calc(100% - 54px);
 
@@ -173,13 +179,13 @@ h1 {
     box-shadow: 4px 4px 0 #000;
 }
 
-#continue-button:hover,
-#continue-button:focus-visible {
+.game-button:hover,
+.game-button:focus-visible {
     background-color: var(--line);
     color: var(--night);
 }
 
-#continue-button:active {
+.game-button:active {
     transform: translate(3px, 3px);
     box-shadow: 1px 1px 0 #000;
 }
@@ -320,5 +326,159 @@ h1 {
 
     50% {
         transform: translateY(-3px);
+    }
+}
+.victory-interface {
+    position: relative;
+    z-index: 1;
+
+    width: min(100%, 420px);
+    height: min(820px, calc(100dvh - 40px));
+}
+
+.victory-panel {
+    position: absolute;
+    top: clamp(30px, 7vh, 60px);
+    right: 18px;
+    left: 18px;
+    z-index: 3;
+
+    padding: 18px 14px;
+
+    background-color: rgba(3, 13, 31, 0.76);
+    border: 3px solid var(--line);
+
+    text-align: center;
+    box-shadow: 5px 5px 0 #000;
+}
+
+.victory-kicker {
+    margin: 0 0 12px;
+
+    color: var(--muted);
+    font-size: 0.7rem;
+}
+
+#victory-title {
+    margin: 0;
+    font-family: "Press Start 2P", monospace;
+}
+
+#victory-title span {
+    display: block;
+
+    color: var(--line);
+    font-size: clamp(0.8rem, 4vw, 1rem);
+}
+
+#victory-title strong {
+    display: block;
+
+    margin-top: 12px;
+
+    color: var(--accent);
+    font-size: clamp(1.05rem, 5.4vw, 1.5rem);
+    line-height: 1.5;
+
+    text-shadow: 4px 4px 0 #7c3f00;
+}
+
+.victory-message {
+    margin: 14px 0 0;
+
+    color: var(--text);
+    font-size: 0.75rem;
+}
+
+.victory-character {
+    position: absolute;
+    bottom: 82px;
+    left: 50%;
+    z-index: 2;
+
+    width: clamp(235px, 68vw, 310px);
+    height: auto;
+
+    image-rendering: pixelated;
+
+    filter: drop-shadow(
+        5px 6px 0 rgba(0, 0, 0, 0.65)
+    );
+
+    animation:
+        victory-jump 900ms steps(2, end) infinite;
+}
+
+.victory-spark {
+    position: absolute;
+    z-index: 2;
+
+    width: 7px;
+    height: 7px;
+
+    background-color: var(--accent);
+
+    box-shadow:
+        10px 0 0 var(--accent),
+        5px -5px 0 var(--accent),
+        5px 5px 0 var(--accent);
+
+    animation:
+        spark-blink 800ms steps(2, end) infinite;
+}
+
+.victory-spark--1 {
+    top: 35%;
+    left: 14%;
+}
+
+.victory-spark--2 {
+    top: 42%;
+    right: 14%;
+    animation-delay: 200ms;
+}
+
+.victory-spark--3 {
+    top: 57%;
+    left: 9%;
+    animation-delay: 400ms;
+}
+
+.victory-spark--4 {
+    top: 61%;
+    right: 10%;
+    animation-delay: 600ms;
+}
+
+.victory-interface .game-button {
+    position: absolute;
+    right: 24px;
+    bottom: 18px;
+    left: 24px;
+    z-index: 4;
+
+    width: auto;
+    margin: 0;
+}
+
+@keyframes victory-jump {
+    0%,
+    100% {
+        transform: translate(-50%, 0);
+    }
+
+    50% {
+        transform: translate(-50%, -6px);
+    }
+}
+
+@keyframes spark-blink {
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.25;
     }
 }
