@@ -8,7 +8,7 @@
         content="width=device-width, initial-scale=1.0"
     >
 
-    <title>Birthday Game</title>
+    <title>Juego de cumpleaños</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -31,42 +31,44 @@
         >
             <div class="night-sky" aria-hidden="true"></div>
 
-            <article class="save-panel">
-                <p class="save-slot">SLOT 01 // DATA DETECTED</p>
+            <div class="save-interface">
+                <article class="save-panel">
+                    <h1 id="save-title">
+                        PARTIDA ENCONTRADA
+                    </h1>
 
-                <h1 id="save-title">
-                    SAVE FILE<br>
-                    FOUND
-                </h1>
+                    <div class="save-content">
+                        <div class="portrait-frame">
+                            <img
+                                src="assets/images/characters/pablo-idle.png"
+                                alt="Personaje pixelado de Pablo"
+                            >
+                        </div>
 
-                <div class="pixel-divider"></div>
+                        <dl class="player-data">
+                            <div class="data-row">
+                                <dt>JUGADOR:</dt>
+                                <dd>PABLO</dd>
+                            </div>
 
-                <dl class="player-data">
-                    <div class="data-row">
-                        <dt>PLAYER</dt>
-                        <dd>PABLO</dd>
+                            <div class="data-row">
+                                <dt>NIVEL:</dt>
+                                <dd>21</dd>
+                            </div>
+
+                            <div class="data-row">
+                                <dt>ESTADO:</dt>
+                                <dd class="status">COMPLETADO</dd>
+                            </div>
+                        </dl>
                     </div>
-
-                    <div class="data-row">
-                        <dt>LEVEL</dt>
-                        <dd>21</dd>
-                    </div>
-
-                    <div class="data-row">
-                        <dt>STATUS</dt>
-                        <dd class="status">COMPLETED</dd>
-                    </div>
-                </dl>
+                </article>
 
                 <button id="continue-button" type="button">
                     <span aria-hidden="true">▶</span>
-                    CONTINUE
+                    CONTINUAR
                 </button>
-
-                <p class="screen-hint">
-                    PRESS TO LOAD PLAYER DATA
-                </p>
-            </article>
+            </div>
         </section>
     </main>
 </body>
