@@ -24,12 +24,62 @@
 
 <body>
     <main class="game">
+        <!-- Pantalla 1: cargando partida -->
         <section
-            class="screen screen--active"
-            id="save-screen"
-            aria-labelledby="save-title"
+        class="screen screen--loading"
+        id="loading-screen"
+        aria-labelledby="loading-title"
         >
             <div class="night-sky" aria-hidden="true"></div>
+
+            <div class="loading-interface">
+                <img
+                    class="loading-character"
+                     src="assets/images/characters/pablo-side.png"
+                     alt="Pablo observando el horizonte"
+                >
+
+                <div class="loading-panel">
+                    <h1 id="loading-title">
+                        CARGANDO PARTIDA...
+                    </h1>
+
+                    <p class="loading-player">
+                        JUGADOR: <strong>PABLO</strong>
+                    </p>
+
+                    <div class="progress-group">
+                        <div
+                            class="progress-track"
+                            role="progressbar"
+                            aria-label="Progreso de carga"
+                            aria-valuemin="0"
+                            aria-valuemax="100"
+                            aria-valuenow="0"
+                        >
+                            <div
+                                class="progress-fill"
+                                id="loading-progress"
+                            ></div>
+                        </div>
+
+                        <span id="loading-percentage">0%</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pantalla 2: partida encontrada -->
+        <section
+            class="screen"
+            id="save-screen"
+            aria-labelledby="save-title"
+            hidden
+        >
+            <div 
+             class="night-sky night-sky--save"
+             aria-hidden="true"
+            ></div>
 
             <div class="save-interface">
                 <article class="save-panel">

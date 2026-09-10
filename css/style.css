@@ -45,12 +45,18 @@ button {
     inset: 0;
     z-index: 0;
 
-    background-image: url("../assets/images/backgrounds/monterrey-night.png");
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
+}
 
-    image-rendering: pixelated;
+.night-sky--loading {
+    background-color: #020617;
+}
+
+.night-sky--save {
+    background-image:
+        url("../assets/images/backgrounds/monterrey-night.png");
 }
 
 
@@ -176,4 +182,143 @@ h1 {
 #continue-button:active {
     transform: translate(3px, 3px);
     box-shadow: 1px 1px 0 #000;
+}
+
+.screen[hidden] {
+    display: none;
+}
+
+/* Pantalla de carga */
+
+.screen--loading {
+    padding: 10px;
+    background-color: #020617;
+}
+
+.loading-interface {
+    position: relative;
+    z-index: 1;
+
+    width: min(100%, 420px);
+    height: min(820px, calc(100dvh - 20px));
+
+    overflow: hidden;
+
+    background-image:
+        url("../assets/images/backgrounds/monterrey-loading-vertical.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    border: 4px solid #274c77;
+    border-radius: 28px;
+
+    box-shadow:
+        0 0 0 4px #020617,
+        0 8px 0 #020617;
+
+    image-rendering: pixelated;
+}
+
+.loading-character {
+    position: absolute;
+    bottom: 34%;
+    left: -48px;
+    z-index: 2;
+
+    width: clamp(220px, 65vw, 280px);
+    height: auto;
+
+    image-rendering: pixelated;
+    pointer-events: none;
+
+    filter: drop-shadow(
+        4px 5px 0 rgba(0, 0, 0, 0.65)
+    );
+
+    animation:
+        player-idle 1.4s steps(2, end) infinite;
+}
+
+.loading-panel {
+    position: absolute;
+    right: 16px;
+    bottom: 18px;
+    left: 16px;
+    z-index: 3;
+
+    padding: 14px;
+
+    background-color: rgba(3, 13, 31, 0.82);
+    border: 3px solid var(--line);
+
+    box-shadow: 4px 4px 0 #000;
+}
+
+.loading-panel h1 {
+    margin: 0;
+
+    color: var(--text);
+    font-size: clamp(0.65rem, 3.3vw, 0.85rem);
+    text-align: center;
+}
+
+.loading-player {
+    margin: 10px 0 0;
+
+    color: var(--muted);
+    font-size: 0.72rem;
+}
+
+.loading-player strong {
+    color: var(--accent);
+}
+
+.progress-group {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: 10px;
+
+    margin-top: 12px;
+}
+
+.progress-track {
+    height: 22px;
+    padding: 3px;
+
+    background-color: var(--night);
+    border: 3px solid #d9f7ff;
+}
+
+.progress-fill {
+    width: 0;
+    height: 100%;
+
+    background: repeating-linear-gradient(
+        to right,
+        var(--success) 0 12px,
+        var(--night) 12px 15px
+    );
+
+    transition: width 100ms steps(1, end);
+}
+
+#loading-percentage {
+    min-width: 39px;
+
+    color: var(--text);
+    font-family: "Press Start 2P", monospace;
+    font-size: 0.55rem;
+}
+
+@keyframes player-idle {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-3px);
+    }
 }
