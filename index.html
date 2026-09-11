@@ -344,186 +344,227 @@
         </section>
 
         <!-- Pantalla 5: logros -->
+            <!-- Pantalla 5: logros -->
+<section
+    class="screen"
+    id="achievements-screen"
+    aria-labelledby="achievements-title"
+    hidden
+>
+    <div
+        class="night-sky night-sky--achievements"
+        aria-hidden="true"
+    ></div>
+
+    <article class="achievements-interface">
+        <header class="achievements-header">
+            <p class="achievements-kicker">
+                PROGRESO DEL JUGADOR
+            </p>
+
+            <h1 id="achievements-title">
+                LOGROS
+                <span>DESBLOQUEADOS</span>
+            </h1>
+        </header>
+
+        <p class="achievements-hint">
+            DESLIZA Y TOCA UNA TARJETA
+        </p>
+
+        <div
+            class="achievement-carousel"
+            id="achievement-carousel"
+            aria-label="Logros de Pablo"
+        >
+            <button
+                class="achievement-tile"
+                type="button"
+                aria-pressed="true"
+                data-title="NUEVA BASE DESBLOQUEADA"
+                data-description="Comenzó una nueva etapa al independizarse y hacerse cargo de su propio hogar."
+            >
+            <!-- Nueva base desbloqueada -->
+                <span
+                    class="achievement-icon achievement-icon--home"
+                    aria-hidden="true"
+                ></span>
+
+                <span class="achievement-name">
+                    NUEVA BASE
+                </span>
+
+                <span class="achievement-state">
+                    DESBLOQUEADO
+                </span>
+            </button>
+
+            <button
+                class="achievement-tile"
+                type="button"
+                aria-pressed="false"
+                data-title="ADAPTACIÓN LEGENDARIA"
+                data-description="Se adaptó a diferentes trabajos, horarios y responsabilidades durante el año."
+            >
+                <span 
+                    class="achievement-icon achievement-icon--work"
+                    aria-hidden="true"
+                ></span>
+
+                <span class="achievement-name">
+                    ADAPTACIÓN LEGENDARIA
+                </span>
+
+                <span class="achievement-state">
+                    DESBLOQUEADO
+                </span>
+            </button>
+
+            <button
+                class="achievement-tile"
+                type="button"
+                aria-pressed="false"
+                data-title="COCINEROS EN MODO COOPERATIVO"
+                data-description="Aprendieron a hornear pan y prepararon muchas comidas juntos."
+            >
+                <span 
+                    class="achievement-icon achievement-icon--bread"
+                    aria-hidden="true"
+                ></span>
+
+                <span class="achievement-name">
+                    COCINEROS COOPERATIVOS
+                </span>
+
+                <span class="achievement-state">
+                    DESBLOQUEADO
+                </span>
+            </button>
+
+            <button
+                class="achievement-tile"
+                type="button"
+                aria-pressed="false"
+                data-title="COCINERO DEL GREMIO"
+                data-description="Durante este año cocinó y compartió sus platillos con muchas personas."
+            >
+                <span 
+                    class="achievement-icon achievement-icon--dish"
+                    aria-hidden="true"
+                ></span>
+
+                <span class="achievement-name">
+                    COCINERO DEL GREMIO
+                </span>
+
+                <span class="achievement-state">
+                    DESBLOQUEADO
+                </span>
+            </button>
+
+            <button
+                class="achievement-tile"
+                type="button"
+                aria-pressed="false"
+                data-title="PRIMERA RUTA COMPLETADA"
+                data-description="Condujo una distancia más larga por primera vez y desbloqueó una nueva experiencia."
+            >
+                <span 
+                    class="achievement-icon achievement-icon--car"
+                    aria-hidden="true"
+                ></span>
+
+                <span class="achievement-name">
+                    PRIMERA RUTA
+                </span>
+
+                <span class="achievement-state">
+                    DESBLOQUEADO
+                </span>
+            </button>
+
+            <button
+                class="achievement-tile achievement-tile--secret"
+                type="button"
+                aria-pressed="false"
+                data-icon="👓"
+                data-title="LA MALDICIÓN DE LOS CUATRO LENTES"
+                data-description="Sobrevivió a cuatro lentes rotos durante el mismo año."
+                disabled
+            >
+                <span 
+                    class="achievement-icon achievement-icon--glasses"
+                    aria-hidden="true"
+                ></span>
+
+                <span class="achievement-name">
+                    LOGRO SECRETO
+                </span>
+
+                <span class="achievement-state">
+                    BLOQUEADO
+                </span>
+            </button>
+
+            <button
+                class="achievement-tile achievement-tile--secret"
+                type="button"
+                aria-pressed="false"
+                data-icon="⚡"
+                data-title="FUSIBLE DE EMERGENCIA"
+                data-description="Desbloqueó la habilidad de cambiar fusibles cada vez que la casa decide ponerlo a prueba."
+                disabled
+            >
+                <span 
+                    class="achievement-icon achievement-icon--fuse"
+                    aria-hidden="true"
+                ></span>
+
+                <span class="achievement-name">
+                    LOGRO SECRETO
+                </span>
+
+                <span class="achievement-state">
+                    BLOQUEADO
+                </span>
+            </button>
+        </div>
+
         <section
-            class="screen"
-            id="achievements-screen"
-            aria-labelledby="achievements-title"
+            class="achievement-detail"
+            aria-labelledby="achievement-detail-title"
+        >
+            <p>DETALLES DEL LOGRO</p>
+
+            <h2 id="achievement-detail-title">
+                NUEVA BASE DESBLOQUEADA
+            </h2>
+
+            <p id="achievement-detail-description">
+                Comenzó una nueva etapa al independizarse y
+                hacerse cargo de su propio hogar.
+            </p>
+        </section>
+
+        <button
+            class="game-button"
+            id="secret-button"
+            type="button"
+        >
+            <span aria-hidden="true">?</span>
+            REVELAR SECRETOS
+        </button>
+
+        <button
+            class="game-button"
+            id="save-progress-button"
+            type="button"
             hidden
         >
-            <div
-                class="night-sky night-sky--achievements"
-                aria-hidden="true"
-            ></div>
-
-            <article class="achievements-interface">
-                <header class="achievements-header">
-                    <p class="achievements-kicker">
-                        PROGRESO DEL JUGADOR
-                    </p>
-
-                    <h1 id="achievements-title">
-                        LOGROS DESBLOQUEADOS
-                    </h1>
-                </header>
-
-                <div class="achievements-list">
-                    <article class="achievement-card">
-                        <span
-                            class="achievement-icon"
-                            aria-hidden="true"
-                        >
-                            🏠
-                        </span>
-
-                        <div>
-                            <h2>NUEVA BASE DESBLOQUEADA</h2>
-
-                            <p>
-                                Comenzó una nueva etapa al
-                                independizarse y hacerse cargo de
-                                su propio hogar.
-                            </p>
-                        </div>
-                    </article>
-
-                    <article class="achievement-card">
-                        <span
-                            class="achievement-icon"
-                            aria-hidden="true"
-                        >
-                            💼
-                        </span>
-
-                        <div>
-                            <h2>ADAPTACIÓN LEGENDARIA</h2>
-
-                            <p>
-                                Se adaptó a diferentes trabajos,
-                                horarios y responsabilidades
-                                durante el año.
-                            </p>
-                        </div>
-                    </article>
-
-                    <article class="achievement-card">
-                        <span
-                            class="achievement-icon"
-                            aria-hidden="true"
-                        >
-                            🍞
-                        </span>
-
-                        <div>
-                            <h2>COCINEROS EN MODO COOPERATIVO</h2>
-
-                            <p>
-                                Aprendieron a hornear pan y
-                                prepararon muchas comidas juntos.
-                            </p>
-                        </div>
-                    </article>
-
-                    <article class="achievement-card">
-                        <span
-                            class="achievement-icon"
-                            aria-hidden="true"
-                        >
-                            🍽️
-                        </span>
-
-                        <div>
-                            <h2>COCINERO DEL GREMIO</h2>
-
-                            <p>
-                                Durante este año cocinó y compartió
-                                sus platillos con muchas personas.
-                            </p>
-                        </div>
-                    </article>
-
-                    <article class="achievement-card">
-                        <span
-                            class="achievement-icon"
-                            aria-hidden="true"
-                        >
-                            🚗
-                        </span>
-
-                        <div>
-                            <h2>PRIMERA RUTA COMPLETADA</h2>
-
-                            <p>
-                                Condujo una distancia más larga por
-                                primera vez y desbloqueó una nueva
-                                experiencia.
-                            </p>
-                        </div>
-                    </article>
-                </div>
-
-                <button
-                    class="game-button"
-                    id="secret-button"
-                    type="button"
-                >
-                    <span aria-hidden="true">?</span>
-                    REVELAR LOGROS SECRETOS
+            <span aria-hidden="true">▶</span>
+            GUARDAR PROGRESO
                 </button>
-
-                <section
-                    class="secret-achievements"
-                    id="secret-achievements"
-                    aria-labelledby="secret-title"
-                    hidden
-                >
-                    <h2 id="secret-title">
-                        LOGROS SECRETOS
-                    </h2>
-
-                    <article
-                        class="achievement-card achievement-card--secret"
-                    >
-                        <span
-                            class="achievement-icon"
-                            aria-hidden="true"
-                        >
-                            👓
-                        </span>
-
-                        <div>
-                            <h3>
-                                LA MALDICIÓN DE LOS CUATRO LENTES
-                            </h3>
-
-                            <p>
-                                Sobrevivió a cuatro lentes rotos
-                                durante el mismo año.
-                            </p>
-                        </div>
-                    </article>
-
-                    <article
-                        class="achievement-card achievement-card--secret"
-                    >
-                        <span
-                            class="achievement-icon"
-                            aria-hidden="true"
-                        >
-                            ⚡
-                        </span>
-
-                        <div>
-                            <h3>FUSIBLE DE EMERGENCIA</h3>
-
-                            <p>
-                                Desbloqueó la habilidad de cambiar
-                                fusibles cada vez que la casa decide
-                                ponerlo a prueba.
-                            </p>
-                        </div>
-                    </article>
-                </section>
-            </article>
+             </article>
         </section>
     </main>
 </body>
