@@ -220,7 +220,7 @@
 
                 <div class="coop-stat">
                     <span>MODO COOPERATIVO</span>
-                    <strong>544 DÍAS</strong>
+                    <strong> <span class="cooperative-days">0</span> DÍAS</strong>
                 </div>
 
                 <p class="stats-hint">
@@ -663,6 +663,79 @@
         </button>
     </div>
 </section>
+        <!-- Pantalla 8: nueva misión -->
+<section
+    class="screen screen--mission"
+    id="mission-screen"
+    aria-labelledby="mission-title"
+    hidden
+>
+    <div
+        class="night-sky night-sky--mission"
+        aria-hidden="true"
+    ></div>
+
+    <div class="mission-interface">
+        <header class="mission-panel">
+            <p class="mission-kicker">
+                NUEVA MISIÓN PRINCIPAL
+            </p>
+
+            <h1 id="mission-title">
+                VIVIR UN GRAN AÑO
+            </h1>
+
+            <p class="mission-days">
+                365 DÍAS POR DESCUBRIR
+            </p>
+        </header>
+
+        <div class="mission-scene">
+            <ul
+                class="mission-signpost"
+                aria-label="Objetivos de la misión"
+            >
+                <li class="mission-sign">
+                    NUEVAS AVENTURAS
+                </li>
+
+                <li class="mission-sign">
+                    MÁS RISAS
+                </li>
+
+                <li class="mission-sign">
+                    SUEÑOS POR CUMPLIR
+                </li>
+            </ul>
+
+            <img
+                class="mission-character"
+                src="assets/images/characters/pablo-walking.png"
+                alt="Pablo caminando hacia el portal"
+            >
+        </div>
+
+        <p class="mission-coop">
+            MODO COOPERATIVO CONTINÚA ACTIVO
+
+            <span
+                class="mission-hearts"
+                aria-label="Tres corazones"
+            >
+                ♥ ♥ ♥
+            </span>
+        </p>
+
+        <button
+            class="game-button mission-button"
+            id="accept-mission-button"
+            type="button"
+        >
+            <span aria-hidden="true">▶</span>
+            ACEPTAR MISIÓN
+            </button>
+         </div>
+        </section>
     </main>
 </body>
 </html>

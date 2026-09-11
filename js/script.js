@@ -71,6 +71,33 @@ const savingTitle = document.querySelector("#saving-title");
 const level22Screen = document.querySelector(
     "#level-22-screen"
 );
+const cooperativeDaysElements =
+    document.querySelectorAll(".cooperative-days");
+
+function updateCooperativeDays() {
+    const relationshipStart = Date.UTC(2025, 2, 21);
+
+    const today = new Date();
+
+    const currentDate = Date.UTC(
+        today.getFullYear(),
+        today.getMonth(),
+        today.getDate()
+    );
+
+    const millisecondsPerDay = 1000 * 60 * 60 * 24;
+
+    const daysTogether = Math.floor(
+        (currentDate - relationshipStart) /
+        millisecondsPerDay
+    );
+
+    cooperativeDaysElements.forEach((element) => {
+        element.textContent = daysTogether;
+    });
+}
+
+updateCooperativeDays();
 
 const startLevelButton = document.querySelector(
     "#start-level-button"
@@ -99,6 +126,14 @@ const loadingInterval = setInterval(() => {
         }, 500);
     }
 }, 100);
+
+const missionScreen = document.querySelector(
+    "#mission-screen"
+);
+
+const acceptMissionButton = document.querySelector(
+    "#accept-mission-button"
+);
 
 continueButton.addEventListener("click", () => {
     showScreen(saveScreen, victoryScreen);
@@ -215,4 +250,7 @@ saveProgressButton.addEventListener("click", () => {
                 showScreen(savingScreen, level22Screen);
         }, 1400);
     }, 140);
+});
+startLevelButton.addEventListener("click", () => {
+    showScreen(level22Screen, missionScreen);
 });
