@@ -134,6 +134,11 @@ const missionScreen = document.querySelector(
 const acceptMissionButton = document.querySelector(
     "#accept-mission-button"
 );
+const memoriesScreen = document.querySelector(
+    "#memories-screen"
+);
+
+const replayButton = document.querySelector("#replay-button");
 
 continueButton.addEventListener("click", () => {
     showScreen(saveScreen, victoryScreen);
@@ -251,6 +256,32 @@ saveProgressButton.addEventListener("click", () => {
         }, 1400);
     }, 140);
 });
-startLevelButton.addEventListener("click", () => {
+let missionTransitionStarted = false;
+
+function openMissionScreen() {
+    if (missionTransitionStarted) {
+        return;
+    }
+
+    missionTransitionStarted = true;
+    startLevelButton.blur();
+
     showScreen(level22Screen, missionScreen);
+}
+
+startLevelButton.addEventListener(
+    "pointerup",
+    openMissionScreen
+);
+
+startLevelButton.addEventListener(
+    "click",
+    openMissionScreen
+);
+acceptMissionButton.addEventListener("click", () => {
+    showScreen(missionScreen, memoriesScreen);
+});
+
+replayButton.addEventListener("click", () => {
+    window.location.reload();
 });

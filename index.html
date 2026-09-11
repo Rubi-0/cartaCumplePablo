@@ -2,17 +2,11 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
-
-    <title>carta de cumpleaños</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego de cumpleaños</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
     <link
         href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
         rel="stylesheet"
@@ -43,9 +37,7 @@
                 >
 
                 <div class="loading-panel">
-                    <h1 id="loading-title">
-                        CARGANDO PARTIDA...
-                    </h1>
+                    <h1 id="loading-title">CARGANDO PARTIDA...</h1>
 
                     <p class="loading-player">
                         JUGADOR: <strong>PABLO</strong>
@@ -86,9 +78,7 @@
 
             <div class="save-interface">
                 <article class="save-panel">
-                    <h1 id="save-title">
-                        PARTIDA ENCONTRADA
-                    </h1>
+                    <h1 id="save-title">PARTIDA ENCONTRADA</h1>
 
                     <div class="save-content">
                         <div class="portrait-frame">
@@ -142,9 +132,7 @@
 
             <div class="victory-interface">
                 <article class="victory-panel">
-                    <p class="victory-kicker">
-                        AVENTURA FINALIZADA
-                    </p>
+                    <p class="victory-kicker">AVENTURA FINALIZADA</p>
 
                     <h1 id="victory-title">
                         <span>NIVEL 21</span>
@@ -160,17 +148,14 @@
                     class="victory-spark victory-spark--1"
                     aria-hidden="true"
                 ></span>
-
                 <span
                     class="victory-spark victory-spark--2"
                     aria-hidden="true"
                 ></span>
-
                 <span
                     class="victory-spark victory-spark--3"
                     aria-hidden="true"
                 ></span>
-
                 <span
                     class="victory-spark victory-spark--4"
                     aria-hidden="true"
@@ -207,12 +192,8 @@
 
             <article class="stats-interface">
                 <header class="stats-header">
-                    <p class="stats-kicker">
-                        FICHA DEL JUGADOR
-                    </p>
-
+                    <p class="stats-kicker">FICHA DEL JUGADOR</p>
                     <h1 id="stats-title">PABLO</h1>
-
                     <p class="stats-subtitle">
                         AVENTURERO DE LA VIDA ADULTA
                     </p>
@@ -220,12 +201,12 @@
 
                 <div class="coop-stat">
                     <span>MODO COOPERATIVO</span>
-                    <strong> <span class="cooperative-days">0</span> DÍAS</strong>
+                    <strong>
+                        <span class="cooperative-days">0</span> DÍAS
+                    </strong>
                 </div>
 
-                <p class="stats-hint">
-                    TOCA UNA ESTADÍSTICA
-                </p>
+                <p class="stats-hint">TOCA UNA ESTADÍSTICA</p>
 
                 <div class="stats-list">
                     <button
@@ -238,7 +219,6 @@
                             <span>HUMOR</span>
                             <strong>10/10</strong>
                         </span>
-
                         <span class="stat-meter">
                             <span style="--score: 100%"></span>
                         </span>
@@ -254,7 +234,6 @@
                             <span>CABALLEROSIDAD</span>
                             <strong>10/10</strong>
                         </span>
-
                         <span class="stat-meter">
                             <span style="--score: 100%"></span>
                         </span>
@@ -270,7 +249,6 @@
                             <span>RESISTENCIA</span>
                             <strong>10/10</strong>
                         </span>
-
                         <span class="stat-meter">
                             <span style="--score: 100%"></span>
                         </span>
@@ -286,7 +264,6 @@
                             <span>INDEPENDENCIA</span>
                             <strong>9/10</strong>
                         </span>
-
                         <span class="stat-meter">
                             <span style="--score: 90%"></span>
                         </span>
@@ -302,7 +279,6 @@
                             <span>ADAPTABILIDAD</span>
                             <strong>9/10</strong>
                         </span>
-
                         <span class="stat-meter">
                             <span style="--score: 90%"></span>
                         </span>
@@ -318,7 +294,6 @@
                             <span>MODO RESOLUTIVO</span>
                             <strong>9/10</strong>
                         </span>
-
                         <span class="stat-meter">
                             <span style="--score: 90%"></span>
                         </span>
@@ -327,8 +302,8 @@
 
                 <div class="stat-detail">
                     <p id="stat-description" aria-live="polite">
-                        Convierte memes, recuerdos, chistes y
-                        anécdotas en ataques de risa.
+                        Convierte memes, recuerdos, chistes y anécdotas
+                        en ataques de risa.
                     </p>
                 </div>
 
@@ -344,397 +319,446 @@
         </section>
 
         <!-- Pantalla 5: logros -->
-            <!-- Pantalla 5: logros -->
-<section
-    class="screen"
-    id="achievements-screen"
-    aria-labelledby="achievements-title"
-    hidden
->
-    <div
-        class="night-sky night-sky--achievements"
-        aria-hidden="true"
-    ></div>
-
-    <article class="achievements-interface">
-        <header class="achievements-header">
-            <p class="achievements-kicker">
-                PROGRESO DEL JUGADOR
-            </p>
-
-            <h1 id="achievements-title">
-                LOGROS
-                <span>DESBLOQUEADOS</span>
-            </h1>
-        </header>
-
-        <p class="achievements-hint">
-            DESLIZA Y TOCA UNA TARJETA
-        </p>
-
-        <div
-            class="achievement-carousel"
-            id="achievement-carousel"
-            aria-label="Logros de Pablo"
-        >
-            <button
-                class="achievement-tile"
-                type="button"
-                aria-pressed="true"
-                data-title="NUEVA BASE DESBLOQUEADA"
-                data-description="Comenzó una nueva etapa al independizarse y hacerse cargo de su propio hogar."
-            >
-            <!-- Nueva base desbloqueada -->
-                <span
-                    class="achievement-icon achievement-icon--home"
-                    aria-hidden="true"
-                ></span>
-
-                <span class="achievement-name">
-                    NUEVA BASE
-                </span>
-
-                <span class="achievement-state">
-                    DESBLOQUEADO
-                </span>
-            </button>
-
-            <button
-                class="achievement-tile"
-                type="button"
-                aria-pressed="false"
-                data-title="ADAPTACIÓN LEGENDARIA"
-                data-description="Se adaptó a diferentes trabajos, horarios y responsabilidades durante el año."
-            >
-                <span 
-                    class="achievement-icon achievement-icon--work"
-                    aria-hidden="true"
-                ></span>
-
-                <span class="achievement-name">
-                    ADAPTACIÓN LEGENDARIA
-                </span>
-
-                <span class="achievement-state">
-                    DESBLOQUEADO
-                </span>
-            </button>
-
-            <button
-                class="achievement-tile"
-                type="button"
-                aria-pressed="false"
-                data-title="COCINEROS EN MODO COOPERATIVO"
-                data-description="Aprendieron a hornear pan y prepararon muchas comidas juntos."
-            >
-                <span 
-                    class="achievement-icon achievement-icon--bread"
-                    aria-hidden="true"
-                ></span>
-
-                <span class="achievement-name">
-                    COCINEROS COOPERATIVOS
-                </span>
-
-                <span class="achievement-state">
-                    DESBLOQUEADO
-                </span>
-            </button>
-
-            <button
-                class="achievement-tile"
-                type="button"
-                aria-pressed="false"
-                data-title="COCINERO DEL GREMIO"
-                data-description="Durante este año cocinó y compartió sus platillos con muchas personas."
-            >
-                <span 
-                    class="achievement-icon achievement-icon--dish"
-                    aria-hidden="true"
-                ></span>
-
-                <span class="achievement-name">
-                    COCINERO DEL GREMIO
-                </span>
-
-                <span class="achievement-state">
-                    DESBLOQUEADO
-                </span>
-            </button>
-
-            <button
-                class="achievement-tile"
-                type="button"
-                aria-pressed="false"
-                data-title="PRIMERA RUTA COMPLETADA"
-                data-description="Condujo una distancia más larga por primera vez y desbloqueó una nueva experiencia."
-            >
-                <span 
-                    class="achievement-icon achievement-icon--car"
-                    aria-hidden="true"
-                ></span>
-
-                <span class="achievement-name">
-                    PRIMERA RUTA
-                </span>
-
-                <span class="achievement-state">
-                    DESBLOQUEADO
-                </span>
-            </button>
-
-            <button
-                class="achievement-tile achievement-tile--secret"
-                type="button"
-                aria-pressed="false"
-                data-icon="👓"
-                data-title="LA MALDICIÓN DE LOS CUATRO LENTES"
-                data-description="Sobrevivió a cuatro lentes rotos durante el mismo año."
-                disabled
-            >
-                <span 
-                    class="achievement-icon achievement-icon--glasses"
-                    aria-hidden="true"
-                ></span>
-
-                <span class="achievement-name">
-                    LOGRO SECRETO
-                </span>
-
-                <span class="achievement-state">
-                    BLOQUEADO
-                </span>
-            </button>
-
-            <button
-                class="achievement-tile achievement-tile--secret"
-                type="button"
-                aria-pressed="false"
-                data-icon="⚡"
-                data-title="FUSIBLE DE EMERGENCIA"
-                data-description="Desbloqueó la habilidad de cambiar fusibles cada vez que la casa decide ponerlo a prueba."
-                disabled
-            >
-                <span 
-                    class="achievement-icon achievement-icon--fuse"
-                    aria-hidden="true"
-                ></span>
-
-                <span class="achievement-name">
-                    LOGRO SECRETO
-                </span>
-
-                <span class="achievement-state">
-                    BLOQUEADO
-                </span>
-            </button>
-        </div>
-
         <section
-            class="achievement-detail"
-            aria-labelledby="achievement-detail-title"
-        >
-            <p>DETALLES DEL LOGRO</p>
-
-            <h2 id="achievement-detail-title">
-                NUEVA BASE DESBLOQUEADA
-            </h2>
-
-            <p id="achievement-detail-description">
-                Comenzó una nueva etapa al independizarse y
-                hacerse cargo de su propio hogar.
-            </p>
-        </section>
-
-        <button
-            class="game-button"
-            id="secret-button"
-            type="button"
-        >
-            <span aria-hidden="true">?</span>
-            REVELAR SECRETOS
-        </button>
-                <button
-            class="game-button"
-            id="save-progress-button"
-            type="button"
+            class="screen"
+            id="achievements-screen"
+            aria-labelledby="achievements-title"
             hidden
         >
-            <span aria-hidden="true">▶</span>
-            GUARDAR PROGRESO
-        </button>
-    </article>
-</section>
-
-<!-- Pantalla 6: guardando progreso -->
-<section
-    class="screen"
-    id="saving-screen"
-    aria-labelledby="saving-title"
-    hidden
->
-    <div class="night-sky" aria-hidden="true"></div>
-
-    <article class="saving-interface">
-        <p class="saving-kicker">
-            SISTEMA DE GUARDADO
-        </p>
-
-        <div
-            class="pixel-save-icon"
-            aria-hidden="true"
-        ></div>
-
-        <h1 id="saving-title">
-            GUARDANDO PROGRESO...
-        </h1>
-
-        <div class="saving-progress">
             <div
-                class="saving-track"
-                id="saving-track"
-                role="progressbar"
-                aria-label="Progreso de guardado"
-                aria-valuemin="0"
-                aria-valuemax="100"
-                aria-valuenow="0"
-            >
+                class="night-sky night-sky--achievements"
+                aria-hidden="true"
+            ></div>
+
+            <article class="achievements-interface">
+                <header class="achievements-header">
+                    <p class="achievements-kicker">
+                        PROGRESO DEL JUGADOR
+                    </p>
+                    <h1 id="achievements-title">
+                        LOGROS <span>DESBLOQUEADOS</span>
+                    </h1>
+                </header>
+
+                <p class="achievements-hint">
+                    DESLIZA Y TOCA UNA TARJETA
+                </p>
+
                 <div
-                    class="saving-bar"
-                    id="saving-progress"
-                ></div>
-            </div>
+                    class="achievement-carousel"
+                    id="achievement-carousel"
+                    aria-label="Logros de Pablo"
+                >
+                    <button
+                        class="achievement-tile"
+                        type="button"
+                        aria-pressed="true"
+                        data-title="NUEVA BASE DESBLOQUEADA"
+                        data-description="Comenzó una nueva etapa al independizarse y hacerse cargo de su propio hogar."
+                    >
+                        <span
+                            class="achievement-icon achievement-icon--home"
+                            aria-hidden="true"
+                        ></span>
+                        <span class="achievement-name">NUEVA BASE</span>
+                        <span class="achievement-state">DESBLOQUEADO</span>
+                    </button>
 
-            <strong id="saving-percentage">0%</strong>
-        </div>
+                    <button
+                        class="achievement-tile"
+                        type="button"
+                        aria-pressed="false"
+                        data-title="ADAPTACIÓN LEGENDARIA"
+                        data-description="Se adaptó a diferentes trabajos, horarios y responsabilidades durante el año."
+                    >
+                        <span
+                            class="achievement-icon achievement-icon--work"
+                            aria-hidden="true"
+                        ></span>
+                        <span class="achievement-name">
+                            ADAPTACIÓN LEGENDARIA
+                        </span>
+                        <span class="achievement-state">DESBLOQUEADO</span>
+                    </button>
 
-        <p
-            class="saving-status"
-            id="saving-status"
-            aria-live="polite"
+                    <button
+                        class="achievement-tile"
+                        type="button"
+                        aria-pressed="false"
+                        data-title="COCINEROS EN MODO COOPERATIVO"
+                        data-description="Aprendieron a hornear pan y prepararon muchas comidas juntos."
+                    >
+                        <span
+                            class="achievement-icon achievement-icon--bread"
+                            aria-hidden="true"
+                        ></span>
+                        <span class="achievement-name">
+                            COCINEROS COOPERATIVOS
+                        </span>
+                        <span class="achievement-state">DESBLOQUEADO</span>
+                    </button>
+
+                    <button
+                        class="achievement-tile"
+                        type="button"
+                        aria-pressed="false"
+                        data-title="COCINERO DEL GREMIO"
+                        data-description="Durante este año cocinó y compartió sus platillos con muchas personas."
+                    >
+                        <span
+                            class="achievement-icon achievement-icon--dish"
+                            aria-hidden="true"
+                        ></span>
+                        <span class="achievement-name">
+                            COCINERO DEL GREMIO
+                        </span>
+                        <span class="achievement-state">DESBLOQUEADO</span>
+                    </button>
+
+                    <button
+                        class="achievement-tile"
+                        type="button"
+                        aria-pressed="false"
+                        data-title="PRIMERA RUTA COMPLETADA"
+                        data-description="Condujo una distancia más larga por primera vez y desbloqueó una nueva experiencia."
+                    >
+                        <span
+                            class="achievement-icon achievement-icon--car"
+                            aria-hidden="true"
+                        ></span>
+                        <span class="achievement-name">PRIMERA RUTA</span>
+                        <span class="achievement-state">DESBLOQUEADO</span>
+                    </button>
+
+                    <button
+                        class="achievement-tile achievement-tile--secret"
+                        type="button"
+                        aria-pressed="false"
+                        data-title="LA MALDICIÓN DE LOS CUATRO LENTES"
+                        data-description="Sobrevivió a cuatro lentes rotos durante el mismo año."
+                        disabled
+                    >
+                        <span
+                            class="achievement-icon achievement-icon--glasses"
+                            aria-hidden="true"
+                        ></span>
+                        <span class="achievement-name">LOGRO SECRETO</span>
+                        <span class="achievement-state">BLOQUEADO</span>
+                    </button>
+
+                    <button
+                        class="achievement-tile achievement-tile--secret"
+                        type="button"
+                        aria-pressed="false"
+                        data-title="FUSIBLE DE EMERGENCIA"
+                        data-description="Desbloqueó la habilidad de cambiar fusibles cada vez que la casa decide ponerlo a prueba."
+                        disabled
+                    >
+                        <span
+                            class="achievement-icon achievement-icon--fuse"
+                            aria-hidden="true"
+                        ></span>
+                        <span class="achievement-name">LOGRO SECRETO</span>
+                        <span class="achievement-state">BLOQUEADO</span>
+                    </button>
+                </div>
+
+                <section
+                    class="achievement-detail"
+                    aria-labelledby="achievement-detail-title"
+                >
+                    <p>DETALLES DEL LOGRO</p>
+                    <h2 id="achievement-detail-title">
+                        NUEVA BASE DESBLOQUEADA
+                    </h2>
+                    <p id="achievement-detail-description">
+                        Comenzó una nueva etapa al independizarse y
+                        hacerse cargo de su propio hogar.
+                    </p>
+                </section>
+
+                <button
+                    class="game-button"
+                    id="secret-button"
+                    type="button"
+                >
+                    <span aria-hidden="true">?</span>
+                    REVELAR SECRETOS
+                </button>
+
+                <button
+                    class="game-button"
+                    id="save-progress-button"
+                    type="button"
+                    hidden
+                >
+                    <span aria-hidden="true">▶</span>
+                    GUARDAR PROGRESO
+                </button>
+            </article>
+        </section>
+
+        <!-- Pantalla 6: guardando progreso -->
+        <section
+            class="screen screen--saving"
+            id="saving-screen"
+            aria-labelledby="saving-title"
+            hidden
         >
-            PREPARANDO DATOS...
-        </p>
+            <div
+                class="night-sky night-sky--saving"
+                aria-hidden="true"
+            ></div>
 
-        <p class="saving-warning">
-            NO CIERRES LA PARTIDA
-        </p>
-    </article>
-</section>
+            <article class="saving-interface">
+                <p class="saving-kicker">SISTEMA DE GUARDADO</p>
+                <div class="pixel-save-icon" aria-hidden="true"></div>
+
+                <h1 id="saving-title">GUARDANDO PROGRESO...</h1>
+
+                <div class="saving-progress">
+                    <div
+                        class="saving-track"
+                        id="saving-track"
+                        role="progressbar"
+                        aria-label="Progreso de guardado"
+                        aria-valuemin="0"
+                        aria-valuemax="100"
+                        aria-valuenow="0"
+                    >
+                        <div
+                            class="saving-bar"
+                            id="saving-progress"
+                        ></div>
+                    </div>
+
+                    <strong id="saving-percentage">0%</strong>
+                </div>
+
+                <p
+                    class="saving-status"
+                    id="saving-status"
+                    aria-live="polite"
+                >
+                    PREPARANDO DATOS...
+                </p>
+
+                <p class="saving-warning">NO CIERRES LA PARTIDA</p>
+            </article>
+        </section>
+
         <!-- Pantalla 7: nivel 22 desbloqueado -->
-<section
-    class="screen screen--level-22"
-    id="level-22-screen"
-    aria-labelledby="level-22-title"
-    hidden
->
-    <div
-        class="night-sky night-sky--level-22"
-        aria-hidden="true"
-    ></div>
-
-    <div class="level-22-interface">
-        <header class="level-22-header">
-            <p class="level-22-kicker">
-                NUEVA AVENTURA DISPONIBLE
-            </p>
-
-            <h1 id="level-22-title">
-                <span>NIVEL 22</span>
-                <strong>DESBLOQUEADO</strong>
-            </h1>
-        </header>
-
-        <div class="level-22-scene">
-            <img
-                class="level-22-character"
-                src="assets/images/characters/pablo-portal.png"
-                alt="Pablo observando el portal hacia el nivel 22"
-            >
-        </div>
-
-        <button
-            class="game-button level-22-button"
-            id="start-level-button"
-            type="button"
+        <section
+            class="screen screen--level-22"
+            id="level-22-screen"
+            aria-labelledby="level-22-title"
+            hidden
         >
-            <span aria-hidden="true">▶</span>
-            INICIAR NUEVO NIVEL
-        </button>
-    </div>
-</section>
+            <div
+                class="night-sky night-sky--level-22"
+                aria-hidden="true"
+            ></div>
+
+            <div class="level-22-interface unlock-interface">
+                <article class="level-22-panel unlock-panel">
+                    <p class="level-22-kicker unlock-kicker">
+                        NUEVA AVENTURA DISPONIBLE
+                    </p>
+
+                    <h1 id="level-22-title" class="level-22-title">
+                        <span>NIVEL 22</span>
+                        <strong>¡DESBLOQUEADO!</strong>
+                    </h1>
+
+                    <p class="level-22-message unlock-message">
+                        EL PORTAL HACIA UN NUEVO AÑO ESTÁ ABIERTO
+                    </p>
+                </article>
+
+                <img
+                    class="level-22-character portal-character"
+                    src="assets/images/characters/pablo-portal.png"
+                    alt="Pablo observando el portal hacia el nivel 22"
+                >
+
+                <button
+                    class="game-button"
+                    id="start-level-button"
+                    type="button"
+                >
+                    <span aria-hidden="true">▶</span>
+                    INICIAR NUEVO NIVEL
+                </button>
+            </div>
+        </section>
+
         <!-- Pantalla 8: nueva misión -->
-<section
-    class="screen screen--mission"
-    id="mission-screen"
-    aria-labelledby="mission-title"
-    hidden
->
-    <div
-        class="night-sky night-sky--mission"
-        aria-hidden="true"
-    ></div>
-
-    <div class="mission-interface">
-        <header class="mission-panel">
-            <p class="mission-kicker">
-                NUEVA MISIÓN PRINCIPAL
-            </p>
-
-            <h1 id="mission-title">
-                VIVIR UN GRAN AÑO
-            </h1>
-
-            <p class="mission-days">
-                365 DÍAS POR DESCUBRIR
-            </p>
-        </header>
-
-        <div class="mission-scene">
-            <ul
-                class="mission-signpost"
-                aria-label="Objetivos de la misión"
-            >
-                <li class="mission-sign">
-                    NUEVAS AVENTURAS
-                </li>
-
-                <li class="mission-sign">
-                    MÁS RISAS
-                </li>
-
-                <li class="mission-sign">
-                    SUEÑOS POR CUMPLIR
-                </li>
-            </ul>
-
-            <img
-                class="mission-character"
-                src="assets/images/characters/pablo-walking.png"
-                alt="Pablo caminando hacia el portal"
-            >
-        </div>
-
-        <p class="mission-coop">
-            MODO COOPERATIVO CONTINÚA ACTIVO
-
-            <span
-                class="mission-hearts"
-                aria-label="Tres corazones"
-            >
-                ♥ ♥ ♥
-            </span>
-        </p>
-
-        <button
-            class="game-button mission-button"
-            id="accept-mission-button"
-            type="button"
+        <section
+            class="screen screen--mission"
+            id="mission-screen"
+            aria-labelledby="mission-title"
+            hidden
         >
-            <span aria-hidden="true">▶</span>
-            ACEPTAR MISIÓN
-            </button>
-         </div>
+            <div
+                class="night-sky night-sky--mission"
+                aria-hidden="true"
+            ></div>
+
+            <div class="mission-interface">
+                <article class="mission-panel">
+                    <p class="mission-kicker">
+                        NUEVA MISIÓN PRINCIPAL
+                    </p>
+
+                    <h1 id="mission-title">VIVIR UN GRAN AÑO</h1>
+
+                    <p class="mission-duration">
+                        365 DÍAS POR DESCUBRIR
+                    </p>
+                </article>
+
+                <div class="mission-scene">
+                    <div class="mission-signs" aria-label="Objetivos">
+                        <p class="mission-sign">NUEVAS AVENTURAS</p>
+                        <p class="mission-sign">MÁS RISAS</p>
+                        <p class="mission-sign">SUEÑOS POR CUMPLIR</p>
+                    </div>
+
+                    <img
+                        class="mission-character"
+                        src="assets/images/characters/pablo-walking.png"
+                        alt="Pablo caminando hacia el portal del nuevo nivel"
+                    >
+                </div>
+
+                <p class="mission-coop cooperative-message">
+                    MODO COOPERATIVO CONTINÚA ACTIVO
+                    <span aria-hidden="true">♥ ♥ ♥</span>
+                </p>
+
+                <button
+                    class="game-button"
+                    id="accept-mission-button"
+                    type="button"
+                >
+                    <span aria-hidden="true">▶</span>
+                    ACEPTAR MISIÓN
+                </button>
+            </div>
+        </section>
+
+        <!-- Pantalla 9: recuerdos y cierre -->
+        <section
+            class="screen screen--memories"
+            id="memories-screen"
+            aria-labelledby="memories-title"
+            hidden
+        >
+            <div
+                class="night-sky night-sky--memories"
+                aria-hidden="true"
+            ></div>
+
+            <article class="memories-interface">
+                <header class="memories-header">
+                    <p class="memories-kicker">
+                        RECUERDOS DESBLOQUEADOS
+                    </p>
+
+                    <h1 id="memories-title">
+                        FELIZ CUMPLEAÑOS,
+                        <span>PABLO</span>
+                    </h1>
+                </header>
+
+                <div class="birthday-message">
+                    <p>
+                        Gracias por cada risa, comida, aventura y
+                        momento compartido. Mi parte favorita de este
+                        juego es vivirlo contigo.
+                    </p>
+                </div>
+
+                <p class="memories-hint">
+                    DESLIZA PARA VER LOS RECUERDOS
+                </p>
+
+                <div
+                    class="memories-carousel"
+                    aria-label="Recuerdos destacados"
+                >
+                    <figure class="memory-card">
+                        <img
+                            class="memory-photo"
+                            src="assets/images/memories/memory-01.jpg"
+                            alt="Una fotografía bonita de Pablo y su novia"
+                        >
+                        <figcaption class="memory-label">
+                            MODO COOPERATIVO
+                        </figcaption>
+                    </figure>
+
+                    <figure class="memory-card">
+                        <img
+                            class="memory-photo"
+                            src="assets/images/memories/memory-02.jpg"
+                            alt="Un recuerdo de cocinar u hornear juntos"
+                        >
+                        <figcaption class="memory-label">
+                            COCINEROS COOPERATIVOS
+                        </figcaption>
+                    </figure>
+
+                    <figure class="memory-card">
+                        <img
+                            class="memory-photo"
+                            src="assets/images/memories/memory-03.jpg"
+                            alt="Una salida o aventura importante del año"
+                        >
+                        <figcaption class="memory-label">
+                            AVENTURA COMPARTIDA
+                        </figcaption>
+                    </figure>
+                </div>
+
+                <div class="final-message">
+                    <p>
+                        Aún nos quedan muchas historias por desbloquear.
+                        Gracias por elegirme como tu compañera de aventura
+                        otro año más.
+                    </p>
+
+                    <p class="cooperative-summary">
+                        <span aria-hidden="true">🎮</span>
+                        MODO COOPERATIVO:
+                        <strong>
+                            <span class="cooperative-days">0</span> DÍAS
+                        </strong>
+                        <span aria-hidden="true">♥</span>
+                    </p>
+                </div>
+
+                <div class="memories-actions">
+                    <a
+                        class="game-button album-button"
+                        href="https://photos.app.goo.gl/PEGA_AQUI_TU_ENLACE"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <span aria-hidden="true">▶</span>
+                        VER ÁLBUM COMPLETO
+                    </a>
+
+                    <button
+                        class="game-button replay-button"
+                        id="replay-button"
+                        type="button"
+                    >
+                        <span aria-hidden="true">↻</span>
+                        VER DE NUEVO
+                    </button>
+                </div>
+            </article>
         </section>
     </main>
 </body>
