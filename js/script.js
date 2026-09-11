@@ -53,6 +53,22 @@ const saveProgressButton = document.querySelector(
     "#save-progress-button"
 );
 
+const savingScreen = document.querySelector("#saving-screen");
+
+const savingTrack = document.querySelector("#saving-track");
+
+const savingProgress = document.querySelector(
+    "#saving-progress"
+);
+
+const savingPercentage = document.querySelector(
+    "#saving-percentage"
+);
+
+const savingStatus = document.querySelector("#saving-status");
+
+const savingTitle = document.querySelector("#saving-title");
+
 function showScreen(currentScreen, nextScreen) {
     currentScreen.hidden = true;
     nextScreen.hidden = false;
@@ -135,7 +151,6 @@ secretButton.addEventListener("click", () => {
             ".achievement-state"
         );
 
-        icon.textContent = tile.dataset.icon;
         name.textContent = tile.dataset.title;
         state.textContent = "DESBLOQUEADO";
     });
@@ -153,4 +168,41 @@ secretButton.addEventListener("click", () => {
         left: achievementCarousel.scrollWidth,
         behavior: "smooth"
     });
+});
+saveProgressButton.addEventListener("click", () => {
+    achievementsScreen.hidden = true;
+    savingScreen.hidden = false;
+
+    let savingValue = 0;
+
+    const savingInterval = setInterval(() => {
+        savingValue = Math.min(savingValue + 4, 100);
+
+        savingProgress.style.width = `${savingValue}%`;
+        savingPercentage.textContent = `${savingValue}%`;
+
+        savingTrack.setAttribute(
+            "aria-valuenow",
+            savingValue
+        );
+
+        if (savingValue < 35) {
+            savingStatus.textContent =
+                "GUARDANDO ESTADÍSTICAS...";
+        } else if (savingValue < 70) {
+            savingStatus.textContent =
+                "REGISTRANDO LOGROS...";
+        } else if (savingValue < 100) {
+            savingStatus.textContent =
+                "ACTUALIZANDO PARTIDA...";
+        } else {
+            clearInterval(savingInterval);
+
+            savingTitle.textContent =
+                "PROGRESO GUARDADO";
+
+            savingStatus.textContent =
+                "LISTO PARA DESBLOQUEAR EL NIVEL 22";
+        }
+    }, 140);
 });

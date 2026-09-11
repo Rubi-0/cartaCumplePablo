@@ -554,8 +554,7 @@
             <span aria-hidden="true">?</span>
             REVELAR SECRETOS
         </button>
-
-        <button
+                <button
             class="game-button"
             id="save-progress-button"
             type="button"
@@ -563,9 +562,65 @@
         >
             <span aria-hidden="true">▶</span>
             GUARDAR PROGRESO
-                </button>
-             </article>
-        </section>
+        </button>
+    </article>
+</section>
+
+<!-- Pantalla 6: guardando progreso -->
+<section
+    class="screen"
+    id="saving-screen"
+    aria-labelledby="saving-title"
+    hidden
+>
+    <div class="night-sky" aria-hidden="true"></div>
+
+    <article class="saving-interface">
+        <p class="saving-kicker">
+            SISTEMA DE GUARDADO
+        </p>
+
+        <div
+            class="pixel-save-icon"
+            aria-hidden="true"
+        ></div>
+
+        <h1 id="saving-title">
+            GUARDANDO PROGRESO...
+        </h1>
+
+        <div class="saving-progress">
+            <div
+                class="saving-track"
+                id="saving-track"
+                role="progressbar"
+                aria-label="Progreso de guardado"
+                aria-valuemin="0"
+                aria-valuemax="100"
+                aria-valuenow="0"
+            >
+                <div
+                    class="saving-bar"
+                    id="saving-progress"
+                ></div>
+            </div>
+
+            <strong id="saving-percentage">0%</strong>
+        </div>
+
+        <p
+            class="saving-status"
+            id="saving-status"
+            aria-live="polite"
+        >
+            PREPARANDO DATOS...
+        </p>
+
+        <p class="saving-warning">
+            NO CIERRES LA PARTIDA
+        </p>
+    </article>
+</section>
     </main>
 </body>
 </html>
