@@ -9,6 +9,7 @@ const progressPercentage = document.querySelector(
 );
 
 const continueButton = document.querySelector("#continue-button");
+const statsScreen = document.querySelector("#stats-screen");
 
 let progress = 0;
 
@@ -33,4 +34,27 @@ const loadingInterval = setInterval(() => {
 continueButton.addEventListener("click", () => {
     saveScreen.hidden = true;
     victoryScreen.hidden = false;
+});
+const statsButton = document.querySelector("#stats-button");
+
+const statOptions = document.querySelectorAll(".stat-option");
+const statDescription = document.querySelector(
+    "#stat-description"
+);
+statsButton.addEventListener("click", () => {
+    victoryScreen.hidden = true;
+    statsScreen.hidden = false;
+});
+
+statOptions.forEach((option) => {
+    option.addEventListener("click", () => {
+        statOptions.forEach((item) => {
+            item.setAttribute("aria-pressed", "false");
+        });
+
+        option.setAttribute("aria-pressed", "true");
+
+        statDescription.textContent =
+            option.dataset.description;
+    });
 });

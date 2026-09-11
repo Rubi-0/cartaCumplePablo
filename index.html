@@ -181,16 +181,164 @@
                     src="assets/images/characters/pablo-victory.png"
                     alt="Pablo celebrando que completó el nivel 21"
                 >
-
-                <button
-                    class="game-button"
-                    id="results-button"
-                    type="button"
-                >
-                    <span aria-hidden="true">▶</span>
-                    VER RESULTADOS
+                 <button
+                 class="game-button"
+                 id="stats-button"
+                 type="button"
+                 >
+                 <span aria-hidden="true">▶</span>
+                 VER ESTADÍSTICAS
                 </button>
             </div>
+        </section>
+        <!-- Pantalla 4: estadísticas -->
+                <!-- Pantalla 4: estadísticas -->
+                 <section
+                 class="screen"
+                 id="stats-screen"
+                 aria-labelledby="stats-title"
+                 hidden
+                 >
+                 <div
+                 class="night-sky night-sky--stats"
+                 aria-hidden="true" ></div>
+
+    <article class="stats-interface">
+        <header class="stats-header">
+            <p class="stats-kicker">
+                FICHA DEL JUGADOR
+            </p>
+
+            <h1 id="stats-title">PABLO</h1>
+
+            <p class="stats-subtitle">
+                AVENTURERO DE LA VIDA ADULTA
+            </p>
+        </header>
+
+        <div class="coop-stat">
+            <span>MODO COOPERATIVO</span>
+            <strong>544 DÍAS</strong>
+        </div>
+
+        <p class="stats-hint">
+            TOCA UNA ESTADÍSTICA
+        </p>
+
+        <div class="stats-list">
+            <button
+                class="stat-option"
+                type="button"
+                aria-pressed="true"
+                data-description="Convierte memes, recuerdos, chistes y anécdotas en ataques de risa."
+            >
+                <span class="stat-heading">
+                    <span>HUMOR</span>
+                    <strong>10/10</strong>
+                </span>
+
+                <span class="stat-meter">
+                    <span style="--score: 100%"></span>
+                </span>
+            </button>
+
+            <button
+                class="stat-option"
+                type="button"
+                aria-pressed="false"
+                data-description="Siempre abre las puertas y demuestra cariño mediante pequeños detalles."
+            >
+                <span class="stat-heading">
+                    <span>CABALLEROSIDAD</span>
+                    <strong>10/10</strong>
+                </span>
+
+                <span class="stat-meter">
+                    <span style="--score: 100%"></span>
+                </span>
+            </button>
+
+            <button
+                class="stat-option"
+                type="button"
+                aria-pressed="false"
+                data-description="Ha enfrentado meses muy exigentes sin dejar de cumplir con sus responsabilidades."
+            >
+                <span class="stat-heading">
+                    <span>RESISTENCIA</span>
+                    <strong>10/10</strong>
+                </span>
+
+                <span class="stat-meter">
+                    <span style="--score: 100%"></span>
+                </span>
+            </button>
+
+            <button
+                class="stat-option"
+                type="button"
+                aria-pressed="false"
+                data-description="Aprendió a organizar su hogar, cocinar, limpiar y cuidar de sí mismo."
+            >
+                <span class="stat-heading">
+                    <span>INDEPENDENCIA</span>
+                    <strong>9/10</strong>
+                </span>
+
+                <span class="stat-meter">
+                    <span style="--score: 90%"></span>
+                </span>
+            </button>
+
+            <button
+                class="stat-option"
+                type="button"
+                aria-pressed="false"
+                data-description="Puede enfrentarse a nuevos trabajos, horarios y cambios sin rendirse."
+            >
+                <span class="stat-heading">
+                    <span>ADAPTABILIDAD</span>
+                    <strong>9/10</strong>
+                </span>
+
+                <span class="stat-meter">
+                    <span style="--score: 90%"></span>
+                </span>
+            </button>
+
+            <button
+                class="stat-option"
+                type="button"
+                aria-pressed="false"
+                data-description="Cuando aparece un problema cotidiano, busca la manera de solucionarlo."
+            >
+                <span class="stat-heading">
+                    <span>MODO RESOLUTIVO</span>
+                    <strong>9/10</strong>
+                </span>
+
+                <span class="stat-meter">
+                    <span style="--score: 90%"></span>
+                </span>
+            </button>
+        </div>
+
+        <div class="stat-detail">
+            <p id="stat-description" aria-live="polite">
+                Convierte memes, recuerdos, chistes y anécdotas
+                en ataques de risa.
+            </p>
+        </div>
+
+        <button
+            class="game-button"
+            id="achievements-button"
+            type="button"
+        >
+            <span aria-hidden="true">▶</span>
+            VER LOGROS
+        </button>
+               </article>
         </section>
     </main>
 </body>

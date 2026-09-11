@@ -66,6 +66,13 @@ button {
     background-position: center bottom;
 }
 
+.night-sky--stats {
+    background-image:
+        url("../assets/images/backgrounds/monterrey-night.png");
+
+    background-position: center bottom;
+}
+
 .save-interface {
     position: relative;
     z-index: 1;
@@ -481,4 +488,161 @@ h1 {
     50% {
         opacity: 0.25;
     }
+}
+.stats-interface {
+    position: relative;
+    z-index: 1;
+
+    width: min(100%, 400px);
+    max-height: calc(100dvh - 32px);
+    padding: 18px;
+    overflow-y: auto;
+
+    background-color: rgba(3, 13, 31, 0.82);
+    border: 3px solid var(--line);
+
+    box-shadow:
+        0 0 0 4px var(--night),
+        6px 6px 0 #000;
+
+    scrollbar-width: thin;
+    scrollbar-color: var(--line) var(--night);
+}
+
+.stats-header {
+    text-align: center;
+}
+
+.stats-kicker {
+    margin: 0 0 8px;
+
+    color: var(--muted);
+    font-size: 0.68rem;
+}
+
+#stats-title {
+    margin: 0;
+
+    color: var(--accent);
+    font-size: clamp(1.1rem, 6vw, 1.6rem);
+}
+
+.stats-subtitle {
+    margin: 10px 0 0;
+
+    color: var(--text);
+    font-family: "Press Start 2P", monospace;
+    font-size: 0.5rem;
+    line-height: 1.6;
+}
+
+.coop-stat {
+    display: flex;
+    justify-content: space-between;
+    gap: 14px;
+
+    margin-top: 16px;
+    padding: 12px;
+
+    background-color: rgba(125, 211, 252, 0.1);
+    border: 2px solid var(--line);
+
+    font-size: 0.75rem;
+}
+
+.coop-stat span {
+    color: var(--muted);
+}
+
+.coop-stat strong {
+    color: var(--accent);
+    white-space: nowrap;
+}
+
+.stats-hint {
+    margin: 14px 0 8px;
+
+    color: var(--muted);
+    font-size: 0.62rem;
+    text-align: center;
+}
+
+.stats-list {
+    display: grid;
+    gap: 7px;
+}
+
+.stat-option {
+    width: 100%;
+    padding: 8px;
+
+    background-color: rgba(7, 23, 43, 0.72);
+    color: var(--text);
+    border: 2px solid #263a59;
+
+    cursor: pointer;
+}
+
+.stat-option:hover,
+.stat-option:focus-visible,
+.stat-option[aria-pressed="true"] {
+    border-color: var(--accent);
+    background-color: rgba(255, 209, 102, 0.1);
+}
+
+.stat-heading {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+
+    font-family: "Press Start 2P", monospace;
+    font-size: clamp(0.45rem, 2vw, 0.57rem);
+    line-height: 1.4;
+}
+
+.stat-heading strong {
+    color: var(--accent);
+}
+
+.stat-meter {
+    display: block;
+    height: 10px;
+    margin-top: 7px;
+
+    background-color: var(--night);
+    border: 1px solid var(--line);
+}
+
+.stat-meter > span {
+    display: block;
+    width: var(--score);
+    height: 100%;
+
+    background: repeating-linear-gradient(
+        to right,
+        var(--success) 0 13px,
+        var(--night) 13px 16px
+    );
+}
+
+.stat-detail {
+    min-height: 70px;
+    margin-top: 12px;
+    padding: 11px;
+
+    background-color: rgba(6, 16, 31, 0.9);
+    border-left: 4px solid var(--accent);
+}
+
+#stat-description {
+    margin: 0;
+
+    color: var(--text);
+    font-size: 0.75rem;
+    line-height: 1.45;
+}
+
+.stats-interface .game-button {
+    width: 100%;
+    margin: 14px 0 0;
 }
