@@ -10,6 +10,9 @@ const progressPercentage = document.querySelector(
 
 const continueButton = document.querySelector("#continue-button");
 const statsScreen = document.querySelector("#stats-screen");
+const achievementsScreen = document.querySelector(
+    "#achievements-screen"
+);
 
 let progress = 0;
 
@@ -41,6 +44,15 @@ const statOptions = document.querySelectorAll(".stat-option");
 const statDescription = document.querySelector(
     "#stat-description"
 );
+const achievementsButton = document.querySelector(
+    "#achievements-button"
+);
+
+const secretButton = document.querySelector("#secret-button");
+
+const secretAchievements = document.querySelector(
+    "#secret-achievements"
+);
 statsButton.addEventListener("click", () => {
     victoryScreen.hidden = true;
     statsScreen.hidden = false;
@@ -57,4 +69,14 @@ statOptions.forEach((option) => {
         statDescription.textContent =
             option.dataset.description;
     });
+});
+achievementsButton.addEventListener("click", () => {
+    statsScreen.hidden = true;
+    achievementsScreen.hidden = false;
+});
+
+secretButton.addEventListener("click", () => {
+    secretAchievements.hidden = false;
+    secretAchievements.classList.add("is-revealed");
+    secretButton.hidden = true;
 });

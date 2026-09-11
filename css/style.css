@@ -73,6 +73,13 @@ button {
     background-position: center bottom;
 }
 
+.night-sky--achievements {
+    background-image:
+        url("../assets/images/backgrounds/monterrey-night.png");
+
+    background-position: center bottom;
+}
+
 .save-interface {
     position: relative;
     z-index: 1;
@@ -645,4 +652,143 @@ h1 {
 .stats-interface .game-button {
     width: 100%;
     margin: 14px 0 0;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+.achievements-interface {
+    position: relative;
+    z-index: 1;
+
+    width: min(100%, 400px);
+    max-height: calc(100dvh - 32px);
+    padding: 18px;
+    overflow-y: auto;
+
+    background-color: rgba(3, 13, 31, 0.84);
+    border: 3px solid var(--line);
+
+    box-shadow:
+        0 0 0 4px var(--night),
+        6px 6px 0 #000;
+
+    scrollbar-width: thin;
+    scrollbar-color: var(--line) var(--night);
+}
+
+.achievements-header {
+    margin-bottom: 16px;
+    text-align: center;
+}
+
+.achievements-kicker {
+    margin: 0 0 9px;
+
+    color: var(--muted);
+    font-size: 0.68rem;
+}
+
+#achievements-title {
+    color: var(--accent);
+    font-size: clamp(0.85rem, 4vw, 1.15rem);
+}
+
+.achievements-list,
+.secret-achievements {
+    display: grid;
+    gap: 10px;
+}
+
+.achievement-card {
+    display: grid;
+    grid-template-columns: 44px 1fr;
+    align-items: center;
+    gap: 11px;
+
+    padding: 11px;
+
+    background-color: rgba(7, 23, 43, 0.78);
+    border: 2px solid #263a59;
+}
+
+.achievement-icon {
+    display: grid;
+    width: 42px;
+    height: 42px;
+    place-items: center;
+
+    background-color: var(--night);
+    border: 2px solid var(--line);
+
+    font-size: 1.35rem;
+}
+
+.achievement-card h2,
+.achievement-card h3 {
+    margin: 0;
+
+    color: var(--accent);
+    font-family: "Press Start 2P", monospace;
+    font-size: clamp(0.48rem, 2vw, 0.6rem);
+    line-height: 1.5;
+}
+
+.achievement-card p {
+    margin: 7px 0 0;
+
+    color: var(--text);
+    font-size: 0.72rem;
+    line-height: 1.4;
+}
+
+#secret-button {
+    width: 100%;
+    margin: 16px 0 0;
+
+    font-size: 0.55rem;
+    line-height: 1.5;
+}
+
+.secret-achievements {
+    margin-top: 18px;
+}
+
+#secret-title {
+    margin: 0 0 2px;
+
+    color: var(--success);
+    font-family: "Press Start 2P", monospace;
+    font-size: 0.7rem;
+    line-height: 1.5;
+    text-align: center;
+}
+
+.achievement-card--secret {
+    border-color: var(--accent);
+    background-color: rgba(255, 209, 102, 0.1);
+}
+
+.secret-achievements.is-revealed
+.achievement-card--secret {
+    animation:
+        achievement-unlock 500ms steps(4, end) both;
+}
+
+.secret-achievements.is-revealed
+.achievement-card--secret:nth-of-type(2) {
+    animation-delay: 250ms;
+}
+
+@keyframes achievement-unlock {
+    from {
+        opacity: 0;
+        transform: translateY(12px) scale(0.96);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
 }
