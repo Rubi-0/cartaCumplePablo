@@ -68,6 +68,13 @@ const savingPercentage = document.querySelector(
 const savingStatus = document.querySelector("#saving-status");
 
 const savingTitle = document.querySelector("#saving-title");
+const level22Screen = document.querySelector(
+    "#level-22-screen"
+);
+
+const startLevelButton = document.querySelector(
+    "#start-level-button"
+);
 
 function showScreen(currentScreen, nextScreen) {
     currentScreen.hidden = true;
@@ -204,5 +211,8 @@ saveProgressButton.addEventListener("click", () => {
             savingStatus.textContent =
                 "LISTO PARA DESBLOQUEAR EL NIVEL 22";
         }
+            setTimeout(() => {
+                showScreen(savingScreen, level22Screen);
+        }, 1400);
     }, 140);
 });

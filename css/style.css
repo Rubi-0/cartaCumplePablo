@@ -1024,3 +1024,160 @@ h1 {
         animation: none;
     }
 }
+/* Pantalla de nivel 22 */
+
+.screen--level-22 {
+    padding: 18px;
+}
+
+.night-sky--level-22 {
+    background-image:
+        linear-gradient(
+            to bottom,
+            rgba(3, 10, 28, 0.05),
+            rgba(3, 10, 28, 0.18)
+        ),
+        url("../assets/images/backgrounds/level-22.png");
+
+    background-size: cover;
+    background-position: center;
+    image-rendering: pixelated;
+}
+
+.level-22-interface {
+    position: relative;
+    z-index: 1;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: min(100%, 420px);
+    min-height: calc(100dvh - 36px);
+}
+
+.level-22-header {
+    width: 100%;
+    margin-top: clamp(20px, 6vh, 58px);
+    padding: 18px 14px;
+
+    background-color: rgba(5, 18, 39, 0.78);
+    border: 4px solid #67d8ff;
+    box-shadow:
+        0 0 0 4px #06101f,
+        7px 7px 0 rgba(0, 0, 0, 0.8);
+
+    text-align: center;
+    animation: level-title-in 700ms steps(6, end);
+}
+
+.level-22-kicker {
+    margin: 0 0 14px;
+    color: #d9f7ff;
+    font-size: 0.68rem;
+    letter-spacing: 1px;
+}
+
+#level-22-title {
+    margin: 0;
+    font-family: "Press Start 2P", monospace;
+    line-height: 1.5;
+}
+
+#level-22-title span {
+    display: block;
+    color: #ffd166;
+    font-size: clamp(1.5rem, 8vw, 2.35rem);
+    text-shadow:
+        3px 3px 0 #9b552f,
+        0 0 16px rgba(255, 209, 102, 0.5);
+}
+
+#level-22-title strong {
+    display: block;
+    margin-top: 8px;
+    color: #6ee7b7;
+    font-size: clamp(0.72rem, 4vw, 1rem);
+}
+
+.level-22-scene {
+    position: relative;
+    flex: 1;
+    width: 100%;
+    min-height: 280px;
+}
+
+.level-22-character {
+    position: absolute;
+    bottom: 0;
+    left: 1%;
+
+    width: clamp(105px, 35vw, 150px);
+    height: auto;
+
+    filter: drop-shadow(5px 6px 0 rgba(0, 0, 0, 0.55));
+    image-rendering: pixelated;
+
+    animation: character-ready 1.6s steps(3, end) infinite;
+}
+
+.level-22-button {
+    width: min(100%, 330px);
+    margin: 16px 0 10px;
+    flex-shrink: 0;
+
+    animation: button-appear 600ms 700ms both;
+}
+
+@keyframes level-title-in {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes character-ready {
+    50% {
+        transform: translateY(-4px);
+    }
+}
+
+@keyframes button-appear {
+    from {
+        opacity: 0;
+        transform: translateY(14px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-height: 700px) {
+    .level-22-header {
+        margin-top: 8px;
+        padding: 12px;
+    }
+
+    .level-22-scene {
+        min-height: 220px;
+    }
+
+    .level-22-character {
+        width: 100px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .level-22-header,
+    .level-22-character,
+    .level-22-button {
+        animation: none;
+    }
+}
