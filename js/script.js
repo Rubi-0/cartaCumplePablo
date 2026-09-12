@@ -1,3 +1,5 @@
+const screens = document.querySelectorAll(".screen");
+
 const loadingScreen = document.querySelector("#loading-screen");
 const saveScreen = document.querySelector("#save-screen");
 const victoryScreen = document.querySelector("#victory-screen");
@@ -7,25 +9,83 @@ const achievementsScreen = document.querySelector(
     "#achievements-screen"
 );
 
-const progressTrack = document.querySelector(".progress-track");
-const progressBar = document.querySelector("#loading-progress");
+const savingScreen = document.querySelector("#saving-screen");
+
+const level22Screen = document.querySelector(
+    "#level-22-screen"
+);
+
+const missionScreen = document.querySelector(
+    "#mission-screen"
+);
+
+const memoriesScreen = document.querySelector(
+    "#memories-screen"
+);
+
+/* Elementos de la pantalla de carga */
+
+const progressTrack = document.querySelector(
+    ".progress-track"
+);
+
+const progressBar = document.querySelector(
+    "#loading-progress"
+);
 
 const progressPercentage = document.querySelector(
     "#loading-percentage"
 );
 
-const continueButton = document.querySelector("#continue-button");
-const statsButton = document.querySelector("#stats-button");
+/* Botones de navegación */
+
+const continueButton = document.querySelector(
+    "#continue-button"
+);
+
+const statsButton = document.querySelector(
+    "#stats-button"
+);
 
 const achievementsButton = document.querySelector(
     "#achievements-button"
 );
 
-const statOptions = document.querySelectorAll(".stat-option");
+const secretButton = document.querySelector(
+    "#secret-button"
+);
+
+const saveProgressButton = document.querySelector(
+    "#save-progress-button"
+);
+
+const startLevelButton = document.querySelector(
+    "#start-level-button"
+);
+
+const acceptMissionButton = document.querySelector(
+    "#accept-mission-button"
+);
+
+const replayButton = document.querySelector(
+    "#replay-button"
+);
+
+/* Elementos de estadísticas */
+
+const statOptions = document.querySelectorAll(
+    ".stat-option"
+);
 
 const statDescription = document.querySelector(
     "#stat-description"
 );
+
+const cooperativeDaysElements = document.querySelectorAll(
+    ".cooperative-days"
+);
+
+/* Elementos de logros */
 
 const achievementTiles = document.querySelectorAll(
     ".achievement-tile"
@@ -47,15 +107,11 @@ const achievementDetailDescription = document.querySelector(
     "#achievement-detail-description"
 );
 
-const secretButton = document.querySelector("#secret-button");
+/* Elementos de guardado */
 
-const saveProgressButton = document.querySelector(
-    "#save-progress-button"
+const savingTrack = document.querySelector(
+    "#saving-track"
 );
-
-const savingScreen = document.querySelector("#saving-screen");
-
-const savingTrack = document.querySelector("#saving-track");
 
 const savingProgress = document.querySelector(
     "#saving-progress"
@@ -65,18 +121,39 @@ const savingPercentage = document.querySelector(
     "#saving-percentage"
 );
 
-const savingStatus = document.querySelector("#saving-status");
-
-const savingTitle = document.querySelector("#saving-title");
-const level22Screen = document.querySelector(
-    "#level-22-screen"
+const savingStatus = document.querySelector(
+    "#saving-status"
 );
-const cooperativeDaysElements =
-    document.querySelectorAll(".cooperative-days");
+
+const savingTitle = document.querySelector(
+    "#saving-title"
+);
+
+/*
+ * Oculta todas las pantallas y muestra únicamente
+ * la pantalla recibida.
+ */
+
+function showScreen(nextScreen) {
+    screens.forEach((screen) => {
+        screen.hidden = true;
+    });
+
+    nextScreen.hidden = false;
+
+    window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: "auto"
+    });
+}
+
+/*
+ * Calcula los días desde el 21 de marzo de 2025.
+ */
 
 function updateCooperativeDays() {
     const relationshipStart = Date.UTC(2025, 2, 21);
-
     const today = new Date();
 
     const currentDate = Date.UTC(
@@ -87,9 +164,12 @@ function updateCooperativeDays() {
 
     const millisecondsPerDay = 1000 * 60 * 60 * 24;
 
-    const daysTogether = Math.floor(
-        (currentDate - relationshipStart) /
-        millisecondsPerDay
+    const daysTogether = Math.max(
+        0,
+        Math.floor(
+            (currentDate - relationshipStart) /
+                millisecondsPerDay
+        )
     );
 
     cooperativeDaysElements.forEach((element) => {
@@ -99,14 +179,16 @@ function updateCooperativeDays() {
 
 updateCooperativeDays();
 
-const startLevelButton = document.querySelector(
-    "#start-level-button"
-);
+/*
+ * Asegura que al cargar la página solamente
+ * aparezca la primera pantalla.
+ */
 
-function showScreen(currentScreen, nextScreen) {
-    currentScreen.hidden = true;
-    nextScreen.hidden = false;
-}
+showScreen(loadingScreen);
+
+/*
+ * Pantalla 1: barra de carga.
+ */
 
 let progress = 0;
 
@@ -116,62 +198,76 @@ const loadingInterval = setInterval(() => {
     progressBar.style.width = `${progress}%`;
     progressPercentage.textContent = `${progress}%`;
 
-    progressTrack.setAttribute("aria-valuenow", progress);
+    progressTrack.setAttribute(
+        "aria-valuenow",
+        progress
+    );
 
     if (progress === 100) {
         clearInterval(loadingInterval);
 
         setTimeout(() => {
-            showScreen(loadingScreen, saveScreen);
+            showScreen(saveScreen);
         }, 500);
     }
 }, 100);
 
-const missionScreen = document.querySelector(
-    "#mission-screen"
-);
-
-const acceptMissionButton = document.querySelector(
-    "#accept-mission-button"
-);
-const memoriesScreen = document.querySelector(
-    "#memories-screen"
-);
-
-const replayButton = document.querySelector("#replay-button");
+/*
+ * Pantallas 2, 3, 4 y 5.
+ */
 
 continueButton.addEventListener("click", () => {
-    showScreen(saveScreen, victoryScreen);
+    showScreen(victoryScreen);
 });
 
 statsButton.addEventListener("click", () => {
-    showScreen(victoryScreen, statsScreen);
+    showScreen(statsScreen);
 });
 
 achievementsButton.addEventListener("click", () => {
-    showScreen(statsScreen, achievementsScreen);
+    showScreen(achievementsScreen);
 });
+
+/*
+ * Selección de estadísticas.
+ */
 
 statOptions.forEach((option) => {
     option.addEventListener("click", () => {
         statOptions.forEach((item) => {
-            item.setAttribute("aria-pressed", "false");
+            item.setAttribute(
+                "aria-pressed",
+                "false"
+            );
         });
 
-        option.setAttribute("aria-pressed", "true");
+        option.setAttribute(
+            "aria-pressed",
+            "true"
+        );
 
         statDescription.textContent =
             option.dataset.description;
     });
 });
 
+/*
+ * Selección de logros.
+ */
+
 achievementTiles.forEach((tile) => {
     tile.addEventListener("click", () => {
         achievementTiles.forEach((item) => {
-            item.setAttribute("aria-pressed", "false");
+            item.setAttribute(
+                "aria-pressed",
+                "false"
+            );
         });
 
-        tile.setAttribute("aria-pressed", "true");
+        tile.setAttribute(
+            "aria-pressed",
+            "true"
+        );
 
         achievementDetailTitle.textContent =
             tile.dataset.title;
@@ -181,14 +277,14 @@ achievementTiles.forEach((tile) => {
     });
 });
 
+/*
+ * Desbloquear logros secretos.
+ */
+
 secretButton.addEventListener("click", () => {
     secretTiles.forEach((tile) => {
         tile.disabled = false;
         tile.classList.add("is-unlocked");
-
-        const icon = tile.querySelector(
-            ".achievement-icon"
-        );
 
         const name = tile.querySelector(
             ".achievement-name"
@@ -216,17 +312,43 @@ secretButton.addEventListener("click", () => {
         behavior: "smooth"
     });
 });
+
+/*
+ * Pantalla 6: guardar progreso.
+ */
+
 saveProgressButton.addEventListener("click", () => {
-    achievementsScreen.hidden = true;
-    savingScreen.hidden = false;
+    saveProgressButton.disabled = true;
+
+    showScreen(savingScreen);
 
     let savingValue = 0;
 
-    const savingInterval = setInterval(() => {
-        savingValue = Math.min(savingValue + 4, 100);
+    savingTitle.textContent =
+        "GUARDANDO PROGRESO...";
 
-        savingProgress.style.width = `${savingValue}%`;
-        savingPercentage.textContent = `${savingValue}%`;
+    savingStatus.textContent =
+        "PREPARANDO DATOS...";
+
+    savingProgress.style.width = "0%";
+    savingPercentage.textContent = "0%";
+
+    savingTrack.setAttribute(
+        "aria-valuenow",
+        "0"
+    );
+
+    const savingInterval = setInterval(() => {
+        savingValue = Math.min(
+            savingValue + 4,
+            100
+        );
+
+        savingProgress.style.width =
+            `${savingValue}%`;
+
+        savingPercentage.textContent =
+            `${savingValue}%`;
 
         savingTrack.setAttribute(
             "aria-valuenow",
@@ -250,37 +372,38 @@ saveProgressButton.addEventListener("click", () => {
 
             savingStatus.textContent =
                 "LISTO PARA DESBLOQUEAR EL NIVEL 22";
-        }
+
+            /*
+             * Este temporizador se ejecuta una sola vez,
+             * cuando el guardado llega al 100 %.
+             */
+
             setTimeout(() => {
-                showScreen(savingScreen, level22Screen);
-        }, 1400);
+                showScreen(level22Screen);
+            }, 1400);
+        }
     }, 140);
 });
-let missionTransitionStarted = false;
 
-function openMissionScreen() {
-    if (missionTransitionStarted) {
-        return;
-    }
+/*
+ * Pantalla 7: nivel 22 desbloqueado.
+ */
 
-    missionTransitionStarted = true;
-    startLevelButton.blur();
-
-    showScreen(level22Screen, missionScreen);
-}
-
-startLevelButton.addEventListener(
-    "pointerup",
-    openMissionScreen
-);
-
-startLevelButton.addEventListener(
-    "click",
-    openMissionScreen
-);
-acceptMissionButton.addEventListener("click", () => {
-    showScreen(missionScreen, memoriesScreen);
+startLevelButton.addEventListener("click", () => {
+    showScreen(missionScreen);
 });
+
+/*
+ * Pantalla 8: nueva misión.
+ */
+
+acceptMissionButton.addEventListener("click", () => {
+    showScreen(memoriesScreen);
+});
+
+/*
+ * Pantalla 9: volver a comenzar.
+ */
 
 replayButton.addEventListener("click", () => {
     window.location.reload();
