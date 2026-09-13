@@ -1,5 +1,11 @@
 const screens = document.querySelectorAll(".screen");
+const startScreen = document.querySelector(
+    "#start-screen"
+);
 
+const startGameButton = document.querySelector(
+    "#start-game-button"
+);
 const loadingScreen = document.querySelector("#loading-screen");
 const saveScreen = document.querySelector("#save-screen");
 const victoryScreen = document.querySelector("#victory-screen");
@@ -236,33 +242,53 @@ updateCooperativeDays();
  * aparezca la primera pantalla.
  */
 
-showScreen(loadingScreen);
+showScreen(startScreen);
 
 /*
  * Pantalla 1: barra de carga.
  */
 
-let progress = 0;
+function startLoading() {
+    showScreen(loadingScreen);
 
-const loadingInterval = setInterval(() => {
-    progress = Math.min(progress + 2, 100);
+    let progress = 0;
 
-    progressBar.style.width = `${progress}%`;
-    progressPercentage.textContent = `${progress}%`;
+    progressBar.style.width = "0%";
+    progressPercentage.textContent = "0%";
 
     progressTrack.setAttribute(
         "aria-valuenow",
-        progress
+        "0"
     );
 
-    if (progress === 100) {
-        clearInterval(loadingInterval);
+    const loadingInterval = setInterval(() => {
+        progress = Math.min(progress + 2, 100);
 
-        setTimeout(() => {
-            showScreen(saveScreen);
-        }, 500);
-    }
-}, 100);
+        progressBar.style.width = `${progress}%`;
+
+        progressPercentage.textContent =
+            `${progress}%`;
+
+        progressTrack.setAttribute(
+            "aria-valuenow",
+            progress
+        );
+
+        if (progress === 100) {
+            clearInterval(loadingInterval);
+
+            setTimeout(() => {
+                showScreen(saveScreen);
+            }, 500);
+        }
+    }, 100);
+}
+
+startGameButton.addEventListener(
+    "click",
+    startLoading,
+    { once: true }
+);
 
 /*
  * Pantallas 2, 3, 4 y 5.

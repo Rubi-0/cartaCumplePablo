@@ -18,11 +18,53 @@
 
 <body>
     <main class="game">
+            <!-- Pantalla inicial -->
+<section
+    class="screen screen--start"
+    id="start-screen"
+    aria-labelledby="start-title"
+>
+    <div
+        class="night-sky night-sky--start"
+        aria-hidden="true"
+    ></div>
+
+    <article class="start-interface">
+        <p class="start-kicker">
+            UNA NUEVA AVENTURA TE ESPERA
+        </p>
+
+        <h1 id="start-title">
+            PARTIDA DE
+            <span>PABLO</span>
+        </h1>
+
+         <img
+                class="start-character"
+                src="assets/images/characters/pablo-idle.png"
+                alt="Personaje pixelado de Pablo"
+            >
+
+            <button
+                class="game-button"
+                id="start-game-button"
+                type="button"
+            >
+                <span aria-hidden="true">▶</span>
+                INICIAR
+            </button>
+
+            <p class="start-hint">
+                ACTIVA EL SONIDO Y COMIENZA LA AVENTURA
+            </p>
+        </article>
+        </section>
         <!-- Pantalla 1: cargando partida -->
         <section
             class="screen screen--loading"
             id="loading-screen"
             aria-labelledby="loading-title"
+            hidden
         >
             <div
                 class="night-sky night-sky--loading"

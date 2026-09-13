@@ -1774,3 +1774,227 @@ h1 {
     transform: translate(3px, 3px);
     box-shadow: 1px 1px 0 #000000;
 }
+
+.screen--start {
+    position: relative;
+    display: grid;
+    min-height: 100vh;
+    min-height: 100dvh;
+    padding: 24px;
+    place-items: center;
+    overflow: hidden;
+}
+
+.night-sky--start {
+    background-image:
+        linear-gradient(
+            rgba(3, 10, 25, 0.2),
+            rgba(3, 10, 25, 0.65)
+        ),
+        url("../assets/images/backgrounds/monterrey-night.png");
+
+    background-size: cover;
+    background-position: center;
+}
+
+.start-interface {
+    position: relative;
+    z-index: 1;
+
+    display: grid;
+    width: min(100%, 390px);
+    gap: 22px;
+    padding: 28px 22px;
+
+    border: 4px solid #67d8ff;
+    background-color: rgba(6, 16, 31, 0.72);
+    text-align: center;
+
+    box-shadow:
+        0 0 0 4px #06101f,
+        8px 8px 0 #000000;
+}
+
+.start-kicker {
+    margin: 0;
+    color: #6ee7b7;
+    font-size: 0.65rem;
+    line-height: 1.7;
+}
+
+#start-title {
+    margin: 0;
+    color: #ffffff;
+    font-family: "Press Start 2P", monospace;
+    font-size: clamp(1.35rem, 6vw, 2rem);
+    line-height: 1.5;
+}
+
+#start-title span {
+    display: block;
+    margin-top: 12px;
+    color: #ffd166;
+}
+
+.start-character {
+    width: min(42%, 145px);
+    margin: 0 auto;
+    image-rendering: pixelated;
+    filter: drop-shadow(5px 5px 0 #000000);
+}
+
+.start-interface .game-button {
+    width: 100%;
+    margin: 0;
+}
+
+.start-hint {
+    margin: 0;
+    color: #91a4c0;
+    font-size: 0.6rem;
+    line-height: 1.7;
+}
+/* ========================================
+   PANTALLA: NIVEL 22 DESBLOQUEADO
+======================================== */
+
+#level-22-screen {
+    position: relative;
+    min-height: 100vh;
+    min-height: 100dvh;
+    padding: 18px;
+    overflow: hidden;
+}
+
+#level-22-screen .night-sky--level-22 {
+    background-image:
+        linear-gradient(
+            rgba(2, 9, 25, 0.12),
+            rgba(2, 9, 25, 0.42)
+        ),
+        url("../assets/images/backgrounds/level-22.png");
+
+    background-size: cover;
+    background-position: center;
+    image-rendering: pixelated;
+}
+
+#level-22-screen .level-22-interface {
+    position: relative;
+    z-index: 1;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: min(100%, 400px);
+    min-height: calc(100dvh - 36px);
+    margin: 0 auto;
+}
+
+#level-22-screen .level-22-panel {
+    width: 100%;
+    margin-top: 16px;
+    padding: 18px 14px;
+
+    border: 3px solid #67d8ff;
+    background-color: rgba(5, 16, 40, 0.78);
+    text-align: center;
+
+    box-shadow:
+        0 0 0 3px #06101f,
+        6px 6px 0 rgba(0, 0, 0, 0.85);
+}
+
+#level-22-screen .level-22-kicker {
+    margin: 0 0 12px;
+    color: #a9dcff;
+    font-size: clamp(0.5rem, 2.4vw, 0.65rem);
+    line-height: 1.7;
+}
+
+#level-22-title {
+    margin: 0;
+    font-family: "Press Start 2P", monospace;
+    line-height: 1.4;
+}
+
+#level-22-title span {
+    display: block;
+    color: #ffd166;
+    font-size: clamp(1.65rem, 8vw, 2.5rem);
+    text-shadow:
+        3px 3px 0 #a95335,
+        5px 5px 0 #06101f;
+}
+
+#level-22-title strong {
+    display: block;
+    margin-top: 12px;
+    color: #6ee7b7;
+    font-size: clamp(0.7rem, 3.4vw, 0.95rem);
+    line-height: 1.7;
+}
+
+#level-22-screen .level-22-message {
+    max-width: 310px;
+    margin: 14px auto 0;
+    color: #f8fafc;
+    font-size: clamp(0.68rem, 3vw, 0.82rem);
+    line-height: 1.5;
+}
+
+#level-22-screen #start-level-button {
+    position: relative;
+    z-index: 3;
+
+    width: min(100%, 310px);
+    margin: 22px auto 0;
+    padding: 15px 10px;
+
+    border-color: #d9f7ff;
+    background-color: rgba(6, 16, 31, 0.94);
+    color: #ffffff;
+}
+
+#level-22-screen #start-level-button:hover,
+#level-22-screen #start-level-button:focus-visible {
+    border-color: #ffd166;
+    color: #ffd166;
+}
+
+#level-22-screen .level-22-character {
+    position: absolute;
+    bottom: 25px;
+    left: 16px;
+    z-index: 2;
+
+    width: clamp(90px, 30vw, 125px);
+    height: auto;
+
+    image-rendering: pixelated;
+    filter: drop-shadow(5px 6px 0 rgba(0, 0, 0, 0.6));
+
+    animation: level-22-character-idle 1.8s steps(2, end) infinite;
+}
+
+@keyframes level-22-character-idle {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-3px);
+    }
+}
+
+/* Corrige el símbolo del botón de sonido */
+
+.sound-button {
+    font-family:
+        "Segoe UI Emoji",
+        "Apple Color Emoji",
+        sans-serif;
+    line-height: 1;
+}
