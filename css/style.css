@@ -1744,3 +1744,33 @@ h1 {
     touch-action: manipulation;
     -webkit-tap-highlight-color: transparent;
 }
+.sound-button {
+    position: fixed;
+    top: 14px;
+    right: 14px;
+    z-index: 100;
+
+    display: grid;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    place-items: center;
+
+    border: 3px solid #67d8ff;
+    background-color: rgba(6, 16, 31, 0.88);
+    color: #ffffff;
+    font-size: 1rem;
+    cursor: pointer;
+
+    box-shadow: 4px 4px 0 #000000;
+}
+
+.sound-button:hover,
+.sound-button:focus-visible {
+    border-color: #ffd166;
+}
+
+.sound-button:active {
+    transform: translate(3px, 3px);
+    box-shadow: 1px 1px 0 #000000;
+}

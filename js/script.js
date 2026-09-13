@@ -70,6 +70,32 @@ const acceptMissionButton = document.querySelector(
 const replayButton = document.querySelector(
     "#replay-button"
 );
+const backgroundMusic = document.querySelector(
+    "#background-music"
+);
+
+const selectSound = document.querySelector(
+    "#select-sound"
+);
+
+const unlockSound = document.querySelector(
+    "#unlock-sound"
+);
+
+const soundButton = document.querySelector(
+    "#sound-button"
+);
+
+const gameButtons = document.querySelectorAll(
+    ".game-button"
+);
+
+let soundEnabled = true;
+let musicStarted = false;
+
+backgroundMusic.volume = 0.18;
+selectSound.volume = 0.35;
+unlockSound.volume = 0.45;
 
 /* Elementos de estadísticas */
 
@@ -146,6 +172,32 @@ function showScreen(nextScreen) {
         left: 0,
         behavior: "auto"
     });
+}
+
+function playSound(audio) {
+    if (!soundEnabled) {
+        return;
+    }
+
+    audio.currentTime = 0;
+
+    audio.play().catch(() => {
+        // El navegador todavía no permitió el audio.
+    });
+}
+
+function startBackgroundMusic() {
+    if (!soundEnabled || musicStarted) {
+        return;
+    }
+
+    backgroundMusic.play()
+        .then(() => {
+            musicStarted = true;
+        })
+        .catch(() => {
+            // Se intentará otra vez en el siguiente toque.
+        });
 }
 
 /*
@@ -380,6 +432,7 @@ saveProgressButton.addEventListener("click", () => {
 
             setTimeout(() => {
                 showScreen(level22Screen);
+                playSound(unlockSound);
             }, 1400);
         }
     }, 140);
@@ -407,4 +460,41 @@ acceptMissionButton.addEventListener("click", () => {
 
 replayButton.addEventListener("click", () => {
     window.location.reload();
+});
+
+gameButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+        startBackgroundMusic();
+        playSound(selectSound);
+    });
+});
+
+soundButton.addEventListener("click", () => {
+    soundEnabled = !soundEnabled;
+
+    soundButton.setAttribute(
+        "aria-pressed",
+        String(soundEnabled)
+    );
+
+    if (soundEnabled) {
+        soundButton.textContent = "🔊";
+
+        soundButton.setAttribute(
+            "aria-label",
+            "Desactivar sonido"
+        );
+
+        startBackgroundMusic();
+    } else {
+        soundButton.textContent = "🔇";
+
+        soundButton.setAttribute(
+            "aria-label",
+            "Activar sonido"
+        );
+
+        backgroundMusic.pause();
+        musicStarted = false;
+    }
 });
